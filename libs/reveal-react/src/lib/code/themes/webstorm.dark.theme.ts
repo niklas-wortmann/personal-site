@@ -1,8 +1,9 @@
-import { makeTheme, PrismTheme } from '@code-surfer/themes/dist/utils';
+import { PrismTheme } from '@code-surfer/themes/dist/utils';
+import { makeTheme } from './makeTheme';
 
 export const darkPrismTheme: PrismTheme = {
   plain: {
-    color: '#8d9199',
+    color: '#bcbec4',
     backgroundColor: '#2b2d30',
   },
   styles: [
@@ -23,47 +24,33 @@ export const darkPrismTheme: PrismTheme = {
     {
       types: ['inserted', 'attr-name'],
       style: {
-        color: 'rgb(173, 219, 103)',
+        color: '#857042',
         fontStyle: 'italic',
       },
     },
     {
       types: ['comment'],
       style: {
-        color: 'rgb(99, 119, 119)',
+        color: '#7a7e85',
         fontStyle: 'italic',
       },
     },
     {
       types: ['string', 'url'],
       style: {
-        color: 'rgb(173, 219, 103)',
+        color: '#6aab73',
       },
     },
     {
-      types: ['variable'],
+      types: ['punctuation', 'operator', 'entity'],
       style: {
-        color: 'rgb(214, 222, 235)',
+        color: '#bcbec4',
       },
     },
     {
       types: ['number'],
       style: {
-        color: 'rgb(247, 140, 108)',
-      },
-    },
-    {
-      types: ['builtin', 'char', 'constant', 'function'],
-      style: {
-        color: 'rgb(130, 170, 255)',
-      },
-    },
-    {
-      // This was manually added after the auto-generation
-      // so that punctuations are not italicised
-      types: ['punctuation'],
-      style: {
-        color: 'rgb(199, 146, 234)',
+        color: '#2aacb8',
       },
     },
     {
@@ -74,15 +61,15 @@ export const darkPrismTheme: PrismTheme = {
       },
     },
     {
-      types: ['class-name'],
+      types: ['class-name', 'builtin'],
       style: {
-        color: 'rgb(255, 203, 139)',
+        color: '#c77dbb',
       },
     },
     {
-      types: ['tag', 'operator', 'keyword'],
+      types: ['tag', 'keyword', 'property'],
       style: {
-        color: 'rgb(127, 219, 202)',
+        color: '#cf8e6d',
       },
     },
     {
@@ -92,9 +79,9 @@ export const darkPrismTheme: PrismTheme = {
       },
     },
     {
-      types: ['property'],
+      types: ['function', 'symbol', 'function-variable'],
       style: {
-        color: 'rgb(128, 203, 196)',
+        color: '#56a8f5',
       },
     },
     {
@@ -106,6 +93,4 @@ export const darkPrismTheme: PrismTheme = {
   ],
 };
 
-export const darkTheme = makeTheme(darkPrismTheme, {
-  title: { background: 'rgba(1, 22, 39, 0.8)', color: '#d6deeb' },
-});
+export const wsDarkTheme = makeTheme(darkPrismTheme);

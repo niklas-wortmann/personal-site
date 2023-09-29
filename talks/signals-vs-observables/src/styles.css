@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-size: 16px;
+    font-family: 'Wix Madefor Text', Inter, system-ui, Avenir, Helvetica, Arial,
+      sans-serif;
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    @apply font-normal leading-6 antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 flex text-2xl;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  button {
+    @apply cursor-pointer rounded-lg border border-solid border-transparent text-base font-medium transition-[border-color] duration-200;
+  }
+
+  button:hover {
+    @apply border-blue-800;
+  }
+
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    @apply text-glow mb-12 font-normal;
+  }
+
+  strong {
+    @apply text-glow;
+  }
+
+  #root {
+    @apply h-screen w-screen;
+  }
+
+  #particles {
+    mix-blend-mode: overlay;
+    @apply fixed inset-0 opacity-50 mix-blend-multiply;
+  }
+}
+
+@layer components {
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(.fragment) {
+    @apply relative scale-75 transform-gpu;
+  }
+
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(.fragment) > * {
+    @apply z-10;
+  }
+
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(.current-visible),
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(.visible) {
+    @apply frosted-glass scale-100;
+  }
+
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(
+      .current-visible
+    )::before,
+  .content-wrapper:not(.r-stack):not(.do-not-group):has(.visible)::before {
+    @apply bg-white/10;
+  }
+}
+
+@layer utilities {
+  .shaking {
+    animation: literally-shaking 0.35s infinite;
+  }
+
+  .crying-cat-frag {
+    transform: rotateZ(-25deg) translateX(90%) translateY(370px) scale(0.8) !important;
+    @apply w-1/2;
+  }
+
+  .bears {
+    @apply w-1/2 mx-auto;
+  }
+
+  .text-glow {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5), 0px 0px 12px #4ed7d1;
+  }
+
+  .frost,
+  .frost > * {
+    @apply relative z-10;
+  }
+
+  .frost::before {
+    @apply absolute inset-0 z-0 backdrop-blur-sm transition-[backdrop-filter] duration-500 content-[''];
+  }
+
+  .frosted-glass {
+    @apply frost rounded-2xl;
+  }
+
+  .frosted-glass::before {
+    @apply rounded-2xl delay-[800ms];
+    backdrop-filter: blur(3px) opacity(0);
+  }
+
+  /*
+   * Placing th shadow on the ::after instead of the .frosted-glass itself, behaves better combined
+   * with the blurred ::before in Chrome for some reason. Firefox is ok either way
+   */
+  .frosted-glass::after {
+    @apply custom-shadow absolute inset-0 z-0 rounded-2xl content-[''];
+  }
+
+  .present .present .frosted-glass::before {
+    backdrop-filter: blur(3px) opacity(1);
+  }
+
+  .hide-non-fragment:has(~ .when-this-is.current-visible) {
+    @apply invisible opacity-0;
+  }
+
+  .takeaways-list {
+    list-style-type: pointing-emoji;
+    @apply flex flex-col gap-4 pl-12;
+  }
+
+  .handwriting {
+    font-family: 'Tangerine', cursive;
+  }
+
+  .embossed {
+    box-shadow: -1px -1px 0 0 #ffffff10, 1px 1px 0 0 #00000020;
+  }
+
+  .custom-shadow {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1), 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .embossed-shadow {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1), 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1), -1px -1px 0 0 #ffffff10,
+      1px 1px 0 0 #00000020;
+  }
+
+  .fade-in-animation {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+  }
+
+  @counter-style pointing-emoji {
+    system: cyclic;
+    symbols: '👉';
+    suffix: '  ';
+  }
+
+  @keyframes literally-shaking {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    12% {
+      transform: translateY(5px);
+    }
+    25% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px) translateY(5px);
+    }
+    62% {
+      transform: translateY(-5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+/**************************************************************************************************/
+/* Codesurfer and prism overwrites */
+
+h4.cs-title {
+  @apply text-glow frost rounded-t-2xl bg-transparent px-4 text-4xl text-white;
+  @apply absolute;
+}
+
+h4.cs-title span {
+  @apply relative;
+}
+
+h4.cs-title::before {
+  @apply inset-x-px inset-y-0 delay-[800ms];
+  backdrop-filter: blur(0) opacity(0);
+}
+
+.present .present h4.cs-title::before {
+  backdrop-filter: blur(5px) opacity(1);
+}
+
+p.cs-subtitle {
+  @apply rounded-xl bg-black/20 text-3xl backdrop-blur-sm;
+}
+
+.cs-container {
+  @apply rounded-2xl;
+}
+
+.cs-content {
+  @apply rounded-2xl;
+}
+
+pre[class*='language-'].line-numbers {
+  @apply py-0 !important;
+}
+
+.highlighted-last-line pre[class*='language-'].line-numbers {
+  @apply pb-6 pt-0 !important;
+}
+
+.cs-container,
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #1e1e1e75;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-base;
+}
+
+.line-highlight {
+  @apply -mt-1 w-full !important;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0)
+  ) !important;
+}
+
+.line-numbers .line-numbers-rows {
+  @apply -top-1 !important;
+}
+/**************************************************************************************************/
+
+/**************************************************************************************************/
+/* Revealjs overwrites */
+
+.reveal-viewport {
+  line-height: inherit;
+}
+
+.reveal .controls .controls-arrow:before,
+.reveal .controls .controls-arrow:after {
+  @apply bg-white;
+}
+
+.reveal .slides section[data-transition='convex'].stack,
+.reveal.convex .slides section.stack {
+  /* Fixes issue with backdrop-filters not working when it's set to preserve-3d */
+  transform-style: flat !important;
+}
+
+.reveal .fragment:not(.custom) {
+  /* Fixes issue with backdrop-filters not working when it's set to any other value */
+  @apply will-change-auto;
+}
+
+/* Select only the first fragment and undo the hiding styling RevealJS */
+/* applies by default */
+.reveal .slides section .fragment:first-child {
+  /* (what you do in here depends on the fragment animations you have applied) */
+  /*opacity: 1;*/
+  /*visibility: visible;*/
+  /*transform: translate(0, 0);*/
+}
+
+/* Select the first child only if any subsequent child has the */
+/* .current-fragment class (i.e. when the 1st fragment is not the */
+/* currently selected one) */
+.reveal .slides section .fragment:first-child:has(~ .current-fragment) {
+  /* (what you do in here depends on the fragment animations you have applied) */
+  /*opacity: 0.5;*/
+}
+/**************************************************************************************************/
+
+code {
+  text-align: left;
+  .cs-line {
+    height: 30px;
+  }
+}
+
+.slide-background-content {
+  background-color: black;
+}
+
+.reveal-viewport {
+  color: white !important;
+}
