@@ -45,7 +45,7 @@
     ],
     "sharedGlobals": []
   },
-  "plugins": ["@nxtensions/astro"],
+  "plugins": [],
   "defaultProject": "homepage",
   "generators": {
     "@nx/react": {

@@ -10,7 +10,6 @@
   "devDependencies": {
     "astro-compress": "2.0.15",
     "astro-icon": "0.8.1",
-    "accessible-astro-components": "2.2.1",
     "@astrojs/react": "^3.0.2",
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
@@ -25,7 +24,6 @@
     "@nx/rollup": "16.8.1",
     "@nx/vite": "16.8.1",
     "@nx/workspace": "16.8.1",
-    "@nxtensions/astro": "16.2.0",
     "@rollup/plugin-url": "^7.0.0",
     "@svgr/rollup": "^8.0.1",
     "@swc/cli": "~0.1.62",

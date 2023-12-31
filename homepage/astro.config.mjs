@@ -1,22 +1,15 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import { fileURLToPath } from 'node:url';
-import compress from 'astro-compress';
+import tailwind from "@astrojs/tailwind";
+import vue from "@astrojs/vue";
+
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
-  compressHTML: true,
-  outDir: '../dist/homepage',
-  integrations: [
-    react(),
-    sitemap(),
-    tailwind({
-      configFile: fileURLToPath(
-        new URL('./tailwind.config.cjs', import.meta.url)
-      ),
-    }),
-     compress()
-  ],
+  site: 'https://wordman.dev',
+  integrations: [mdx(), sitemap(), tailwind(), vue()],
+  output: "static",
+  adapter: vercel()
 });

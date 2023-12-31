@@ -31,10 +31,10 @@
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"],
+        "extraFileExtensions": [".astro"]
       },
       "rules": {
-        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
       }
     },
     {

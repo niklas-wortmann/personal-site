@@ -1,33 +1,42 @@
 {
   "name": "homepage",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
   "sourceRoot": "homepage/src",
+  "projectType": "application",
   "targets": {
     "build": {
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "executor": "@nxtensions/astro:build",
-      "options": {}
+      "executor": "nx:run-script",
+      "outputs": ["{projectRoot}/dist"],
+      "options": {
+        "script": "build"
+      }
     },
-    "dev": {
-      "executor": "@nxtensions/astro:dev",
-      "options": {}
+    "serve": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "dev"
+      }
     },
     "preview": {
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "self"
-        }
-      ],
-      "executor": "@nxtensions/astro:preview",
-      "options": {}
+      "executor": "nx:run-script",
+      "options": {
+        "script": "preview"
+      }
     },
-    "check": {
-      "executor": "@nxtensions/astro:check"
+    "test": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "preview"
+      }
     },
-    "sync": {
-      "executor": "@nxtensions/astro:sync"
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "homepage/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
     }
   },
   "tags": []
