@@ -10,13 +10,24 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@personal/reveal-react": ["libs/reveal-react/src/index.ts"]
+      "@jetbrains/shiki": [
+        "libs/jetbrains-shiki/src/index.ts"
+      ],
+      "@personal/reveal-react": [
+        "libs/reveal-react/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

@@ -17,15 +17,21 @@
     "@astrojs/tailwind": "5.1.0",
     "@astrojs/vercel": "6.1.1",
     "@astrojs/vue": "4.0.6",
+    "@iconify-json/mdi": "1.1.63",
+    "@iconify/json": "2.2.163",
     "astro": "^4.0.8",
+    "astro-icon": "1.0.1",
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
     "tailwindcss": "3.4.0",
     "typescript": "5.3.3",
-    "vue": "3.4.3",
-    "prettier": "latest",
-    "prettier-plugin-astro": "latest"
+    "vue": "3.4.3"
   },
   "devDependencies": {
-    "nx": "17.2.8"
+    "nx": "17.2.8",
+    "rehype-pretty-code": "0.12.3",
+    "rehype-shikiji": "0.9.16",
+    "shikiji": "^0.9.16"
   },
   "nx": {
     "targets": {}

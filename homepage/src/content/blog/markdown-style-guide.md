@@ -114,17 +114,42 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 Output
 
+```ts
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CartService } from './cart.service';
+
+@Component({
+  selector: 'app-cart-button',
+  standalone: true,
+  imports: [RouterLink],
+  template: `
+    <button
+      type="button"
+      [routerLink]="'/cart'"
+    >
+      @if (cartService.length > 0) {
+        <div>
+          {{ cartService.length }}
+        </div>
+      }
+      Cart
+    </button>
+  `,
+  styles: ['button {display: block;}']
+})
+export class CartButtonComponent {
+  protected cartService = inject(CartService);
+}
+```
+
+
+
 ```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
+<button
+  type="button"
+>Click Me </button>
+
 ```
 
 ## List Types
