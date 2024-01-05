@@ -7,14 +7,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>👷This Site is Currently Under Construction 👷</h1>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main class="container mx-auto flex items-center content">
+      <section class="text-container">
+        <span class="highlight-text">Hi! I am</span>
+        <h1>Jan-Niklas Wortmann</h1>
+        <span
+          >I used to do IT Consulting for several Fortune 500 Companies.
+          Nowadays I am working as Developer Advocate for JavaScript &
+          TypeScript, aiming to help the community whenever possible!
+        </span>
+      </section>
+      <img src="/avatar.svg" />
+    </main>
+    <Footer />
+    <style>
+      .highlight-text {
+        color: var(--bright-brown);
+      }
+
+      .text-container {
+        color: var(--white);
+      }
+
+      .content {
+        & * {
+          flex: 1;
+        }
+      }
+    </style>
+  </body>
 </html>

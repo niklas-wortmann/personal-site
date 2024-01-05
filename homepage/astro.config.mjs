@@ -9,13 +9,14 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { getHighlighter } from 'shikiji';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
+import { DarkTheme } from '../libs/jetbrains-shiki/src/index.ts';
+import tailwindcssNesting from 'tailwindcss/nesting'
 
 const inlineTemplateGrammar = JSON.parse(readFileSync(path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/language/inline-template.json"), 'utf8'))
 const inlineStylesGrammar = JSON.parse(readFileSync(path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/language/inline-styles.json"), 'utf8'))
 const templateGrammar = JSON.parse(readFileSync(path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/language/template.json"), 'utf8'))
 const templateBlocksGrammar = JSON.parse(readFileSync(path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/language/template-blocks.json"), 'utf8'))
 const expressionGrammar = JSON.parse(readFileSync(path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/language/expression.json"), 'utf8'))
-
 
 const angularLanguages = [
   {
@@ -69,11 +70,15 @@ const angularLanguages = [
     ...expressionGrammar
   }
 ]
-
 const prettyCodeOptions = {
-  theme: "vitesse-dark",
+  theme: JSON.parse(
+    readFileSync(
+    path.join(process.cwd(), "../libs/jetbrains-shiki/src/lib/themes/dark.json"),
+      'utf-8',
+    ),
+  ),
   tokensMap: {},
-  getHighlighter: (options) => {
+  getHighlighter:  async (options) => {
     return getHighlighter({
       ...options,
       langs: [
@@ -99,4 +104,11 @@ export default defineConfig({
     syntaxHighlight: false,
     rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
   },
+  vite: {
+    css: {
+      postcss: {
+        plugins: [tailwindcssNesting()]
+      }
+    }
+  }
 });
