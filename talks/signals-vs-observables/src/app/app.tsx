@@ -7,37 +7,17 @@ import tsExample2 from './code/test2?raw';
 export const steps: InputStep[] = [
   {
     code: tsExample,
-    title: 'First function',
-    lang: 'js',
-    showNumbers: true,
-    focus: '1:5',
+    lang: 'ts',
+    showNumbers: false,
+    focus: '10,13:23',
   },
   {
     code: tsExample2,
-    title: 'Second function',
-    lang: 'js',
-    showNumbers: true,
+    lang: 'ts',
+    showNumbers: false,
+    focus: '8,11:15',
   },
-  {
-    code: tsExample2,
-    title: 'Third function',
-    lang: 'js',
-    showNumbers: true,
-    focus: '16:33',
-  },
-  {
-    code: tsExample2,
-    title: 'All functions',
-    lang: 'js',
-    showNumbers: true,
-  },
-  {
-    code: tsExample2,
-    title: 'Adipiscing?',
-    lang: 'js',
-    showNumbers: true,
-    focus: '7[10:19]',
-  },
+
 ];
 export function App() {
   console.log('in app 12');

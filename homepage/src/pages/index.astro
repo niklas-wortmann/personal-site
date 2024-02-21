@@ -8,7 +8,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
+      image="social/index-about.png"
+    />
   </head>
   <body>
     <Header title={SITE_TITLE} />
@@ -28,6 +32,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <style>
       .highlight-text {
         color: var(--bright-brown);
+      }
+
+      .container {
+        min-height: calc(100vh - 136px - 80px);
       }
 
       .text-container {

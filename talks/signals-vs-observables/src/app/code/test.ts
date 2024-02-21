@@ -1,24 +1,24 @@
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor) : [];
+
+
+type Link = {
+  target: string;
+  href: string;
 }
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+@Component({
+  selector: "app-link",
+  template: `<a [href]='link.href' [target]='link.target' />`
+})
+export class AppLinkComponent {
 
-  if (!sit || ut < 1) {
-    return [];
+  _link: Link;
+
+  get link(){
+    return this._link;
   }
 
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(ipsum, dolore, (dolore += ut));
+  @Input() set link(value: Link){
+      this._link = value;
+      console.log('some side effect');
   }
-
-  return aliqua;
 }

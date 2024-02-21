@@ -34,15 +34,6 @@
     },
     {
       "scope": [
-        "markup.fenced_code.block.markdown",
-        "markup.fenced_code.block.markdown support.function"
-      ],
-      "settings": {
-        "foreground": "#72737A"
-      }
-    },
-    {
-      "scope": [
         "keyword",
         "keyword.operator.new",
         "variable.language.this",
