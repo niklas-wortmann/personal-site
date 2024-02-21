@@ -1,14 +1,17 @@
 ---
 import { SITE_TITLE } from '../consts';
 import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
+import { Image } from 'astro:assets';
+import avatarImage from '../images/avatar.svg';
 ---
 
 <header class="lg:flex p-5 gap-5">
   <Astronav>
     <div class="flex w-full justify-between">
       <div class="flex items-center">
-        <img
-          src="/avatar.svg"
+        <Image
+          src={avatarImage}
+          height="60"
           class="pr-1"
           alt="Logo of the Website, which is showing a software developer with a nice cup of coffee"
         />
@@ -16,7 +19,7 @@ import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
       </div>
 
       <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800" />
+        <MenuIcon class="w-4 h-4 text-white-800" />
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
@@ -70,10 +73,6 @@ import { Astronav, MenuItems, MenuIcon } from 'astro-navbar';
 
   .dropdown-menu {
     background: var(--black);
-  }
-
-  img {
-    height: 60px;
   }
 
   h2 {

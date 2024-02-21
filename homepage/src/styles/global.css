@@ -45,7 +45,7 @@ body {
   color: rgb(var(--white));
   font-size: 20px;
   line-height: 1.7;
-  background-image: url('/background.png');
+  background-image: url('/background.webp');
   background-size: cover;
   background-repeat: no-repeat;
 }
