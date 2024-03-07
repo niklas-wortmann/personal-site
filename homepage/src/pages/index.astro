@@ -3,8 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Image } from 'astro:assets';
+import { Picture, Image } from 'astro:assets';
 import avatarImage from '../images/avatar.svg';
+import backgroundImage from '../images/background.png';
 ---
 
 <!doctype html>
@@ -20,11 +21,16 @@ import avatarImage from '../images/avatar.svg';
     <Header title={SITE_TITLE} />
     <main class="container mx-auto flex items-center content">
       <section class="text-container">
+        <Picture
+          src={backgroundImage}
+          alt=""
+          style="position: absolute; z-index: -1; top: 0; left: 0"
+        />
         <span class="highlight-text">Hi! I am</span>
         <h1>Jan-Niklas Wortmann</h1>
         <span
           >I used to do IT Consulting for several Fortune 500 Companies.
-          Nowadays I am working as Developer Advocate for JavaScript &
+          Currently I am working as Developer Advocate for JavaScript &
           TypeScript, aiming to help the community whenever possible!
         </span>
       </section>
