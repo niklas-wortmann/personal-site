@@ -35,10 +35,5 @@ export default defineConfig({
         plugins: [tailwindcssNesting()]
       }
     }
-  },
-  partytown: {
-    config: {
-      forward: ["dataLayer.push"],
-    }
   }
 });
