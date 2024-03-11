@@ -3,9 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Picture, Image } from 'astro:assets';
+import { Image } from 'astro:assets';
 import avatarImage from '../images/avatar.svg';
-import backgroundImage from '../images/background.png';
 ---
 
 <!doctype html>
@@ -21,11 +20,6 @@ import backgroundImage from '../images/background.png';
     <Header title={SITE_TITLE} />
     <main class="container mx-auto flex items-center content">
       <section class="text-container">
-        <Picture
-          src={backgroundImage}
-          alt=""
-          style="position: absolute; z-index: -1; top: 0; left: 0"
-        />
         <span class="highlight-text">Hi! I am</span>
         <h1>Jan-Niklas Wortmann</h1>
         <span
@@ -44,11 +38,6 @@ import backgroundImage from '../images/background.png';
       .highlight-text {
         color: var(--bright-brown);
       }
-
-      .container {
-        min-height: calc(100vh - 136px - 80px);
-      }
-
       .text-container {
         color: var(--white);
       }

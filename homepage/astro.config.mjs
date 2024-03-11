@@ -8,6 +8,7 @@ import vercel from "@astrojs/vercel/static";
 import rehypePrettyCode from "rehype-pretty-code";
 import tailwindcssNesting from 'tailwindcss/nesting'
 import { darkTheme } from 'jetbrains-ide-themes';
+import partytown from '@astrojs/partytown'
 
 const prettyCodeOptions = {
   theme: darkTheme,
@@ -33,6 +34,11 @@ export default defineConfig({
       postcss: {
         plugins: [tailwindcssNesting()]
       }
+    }
+  },
+  partytown: {
+    config: {
+      forward: ["dataLayer.push"],
     }
   }
 });
