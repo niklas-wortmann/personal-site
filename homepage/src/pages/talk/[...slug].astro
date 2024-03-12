@@ -27,11 +27,17 @@ console.log(talk)
   <BaseHead title={""} description={SITE_DESCRIPTION} />
 </head>
 <Header />
+<h1 class='text-center mt-4 '>Thanks a Lot for Attending My Talk @ {talk.conf}</h1>
 <main class='pb-0 flex flex-col items-center'>
-  <h1>Thanks a lot for attending my talk @ {talk.conf}</h1>
   <div class='w-full flex justify-center items-center flex-col mb-4'>
-    <a href={`${talk.url}`} class='btn btn-blue btn-full-width mb-4 mt-4'>Slides</a>
+    <a href={`${talk.url}`} class='btn btn-blue btn-full-width mb-4 '>Slides</a>
     {talk.codeUrl != null && <a href={`${talk.codeUrl}`} class='btn btn-blue btn-full-width'>Code Examples</a>}
+  </div>
+  <h2>Let's Stay in Touch</h2>
+  <div class='w-full flex justify-center items-center flex-col mb-4'>
+    <a href='https://twitter.com/niklas_wortmann' class='btn btn-blue btn-full-width mb-4 mt-4'>X (formerly Twitter)</a>
+    <a href='https://www.linkedin.com/in/jan-niklas-wortmann/' class='btn btn-blue btn-full-width mb-4'>LinkedIn</a>
+    <a href='https://github.com/niklas-wortmann' class='btn btn-blue btn-full-width'>GitHub</a>
   </div>
   <Logo/>
 </main>

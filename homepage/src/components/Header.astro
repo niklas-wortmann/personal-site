@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 import avatarImage from '../images/avatar.svg';
 ---
 
-<header class="lg:flex p-5 gap-5">
+<header class="p-5 gap-5 flex-col lg:flex-row lg:items-center items-baseline">
   <Astronav>
     <div class="flex w-full justify-between">
       <div class="flex items-center">
@@ -23,7 +23,7 @@ import avatarImage from '../images/avatar.svg';
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-5">
+      <ul class="flex flex-col lg:flex-row lg:gap-5 lg:mb-0 mb-4">
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/talk">Talks</a></li>
@@ -66,7 +66,6 @@ import avatarImage from '../images/avatar.svg';
     background: var(--black);
     color: var(--white);
     display: flex;
-    align-items: center;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
     border-bottom: 2px solid var(--dark-brown);
     text-decoration: none;
