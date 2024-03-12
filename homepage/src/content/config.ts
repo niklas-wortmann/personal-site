@@ -25,7 +25,8 @@ const talk = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     url: z.string().url(),
-    heroImageAlt: z.string()
+    heroImageAlt: z.string(),
+    codeUrl: z.string().url().optional(),
   })
 })
 

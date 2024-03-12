@@ -10,5 +10,6 @@ description: |
 pubDate: 2024-03-20
 url: https://ngconf2024.wordman.dev
 heroImage: ./signals-vs-observables.png
-heroImageAlt: Title Image for Talki
+heroImageAlt: Title Image for Talking
+codeUrl: https://github.com/niklas-wortmann/signals-observable-example
 ---

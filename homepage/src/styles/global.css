@@ -1,3 +1,4 @@
+
 :root {
   --primary: #2e1d1e;
   --accent: #185182;
@@ -159,4 +160,21 @@ hr {
 
 .text-accent {
   color: var(--accent);
+}
+
+.btn {
+  @apply font-bold py-4 px-8;
+  border-radius: 0.6em;
+  text-align: center;
+}
+
+.btn-full-width {
+  @apply w-full
+}
+.btn-blue {
+  @apply  text-white;
+  background: var(--accent);
+}
+.btn-blue:hover {
+  background: var(--muted-accent);
 }

@@ -1,0 +1,38 @@
+
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Logo from '../../components/Logo.astro';
+import Header from '../../components/Header.astro';
+
+
+export async function getStaticPaths() {
+  const talks = await getCollection('talk');
+  return talks.map((talk) => ({
+  params: { slug: talk.slug },
+  props: talk,
+  }));
+  }
+type Props = CollectionEntry<'talk'>;
+
+const _talk = Astro.props;
+const talk = _talk.data;
+console.log(talk)
+---
+
+<html lang="en">
+<head>
+  <BaseHead title={""} description={SITE_DESCRIPTION} />
+</head>
+<Header />
+<main class='pb-0 flex flex-col items-center'>
+  <h1>Thanks a lot for attending my talk @ {talk.conf}</h1>
+  <div class='w-full flex justify-center items-center flex-col mb-4'>
+    <a href={`${talk.url}`} class='btn btn-blue btn-full-width mb-4 mt-4'>Slides</a>
+    {talk.codeUrl != null && <a href={`${talk.codeUrl}`} class='btn btn-blue btn-full-width'>Code Examples</a>}
+  </div>
+  <Logo/>
+</main>
+<Footer />
