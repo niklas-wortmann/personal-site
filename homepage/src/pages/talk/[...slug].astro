@@ -1,7 +1,6 @@
 
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Logo from '../../components/Logo.astro';
@@ -19,12 +18,11 @@ type Props = CollectionEntry<'talk'>;
 
 const _talk = Astro.props;
 const talk = _talk.data;
-console.log(talk)
 ---
 
 <html lang="en">
 <head>
-  <BaseHead title={""} description={SITE_DESCRIPTION} />
+  <BaseHead title={`Jan's Talk: ${talk.title} ${talk.subtitle}`} description={talk.description} image={talk.heroImage.src} />
 </head>
 <Header />
 <h1 class='text-center mt-4 '>Thanks a Lot for Attending My Talk @ {talk.conf}</h1>

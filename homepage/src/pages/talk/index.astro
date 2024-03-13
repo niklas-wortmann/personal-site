@@ -2,7 +2,6 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
@@ -15,7 +14,7 @@ const talks = (await getCollection('talk')).sort(
 <!doctype html>
 <html lang="en">
 <head>
-  <BaseHead title="Talks by Jan-Niklas Wortmann" description="An overview of all the talks that Jan-Niklas did publicly" />
+  <BaseHead title="Talks by Jan-Niklas Wortmann" description="An Overview of All the Talks that Jan-Niklas gave Publicly" />
   <style>
     main {
       width: 960px;
@@ -99,7 +98,7 @@ const talks = (await getCollection('talk')).sort(
       {
         talks.map((talk) => (
           <li>
-            <a href={`${talk.data.url}`}>
+            <a href={`/talk/${talk.slug}`}>
               <Image width={720} height={360}
                      src={talk.data.heroImage} alt={talk.data.heroImageAlt} />
               <h4 class="title" style='color: var(--muted-accent);'>{talk.data.title}</h4>
