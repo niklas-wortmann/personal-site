@@ -37,8 +37,7 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
   crossorigin
 />
 
-<Plausible domain="wordman.dev"/>
-
+<script defer event-subdomain="homepage" data-domain="wordman.dev" src="https://plausible.io/js/script.js"></script>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
