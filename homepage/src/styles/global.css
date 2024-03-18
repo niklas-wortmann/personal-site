@@ -41,17 +41,20 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  background: var(--primary);
+  /*background: var(--primary);*/
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--white));
   font-size: 20px;
   line-height: 1.7;
-  background-image: url('/background.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
+  /*background-image: url('/background.webp');*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
+  background: rgb(255,166,123);
+  background: radial-gradient(circle, #ffa67b 0%, #d07654 12%, #8f533e 35%, #2e1d1e 80%);
 }
+
 main {
   width: 720px;
   max-width: calc(100% - 2em);
@@ -59,6 +62,11 @@ main {
   padding: 3em 1em;
   min-height: calc(100vh - 136px - 80px);
 }
+
+html{
+  background: var(--black);
+}
+
 h1,
 h2,
 h3,
