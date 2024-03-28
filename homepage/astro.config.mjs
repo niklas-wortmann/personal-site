@@ -6,7 +6,7 @@ import vue from '@astrojs/vue';
 import icon from 'astro-icon';
 import vercel from '@astrojs/vercel/static';
 import tailwindcssNesting from 'tailwindcss/nesting';
-import { DarkRaw, darkTheme } from 'jetbrains-ide-themes';
+import { DarkRaw } from 'jetbrains-ide-themes';
 import expressiveCode from 'astro-expressive-code';
 import {
   transformerTwoslash
