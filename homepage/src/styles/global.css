@@ -45,18 +45,18 @@ body {
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  color: rgb(var(--white));
+  color: var(--white));
   font-size: 20px;
   line-height: 1.7;
   /*background-image: url('/background.webp');*/
   /*background-size: cover;*/
   /*background-repeat: no-repeat;*/
   background: rgb(255,166,123);
-  background: radial-gradient(circle, #ffa67b 0%, #d07654 12%, #8f533e 35%, #2e1d1e 80%);
+  background: radial-gradient(circle, #ffa67b 0%, #d07654 12%, #8f533e 90%, #2e1d1e 99%);
 }
 
 main {
-  width: 720px;
+  width: 1280px;
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3em 1em;
@@ -125,6 +125,7 @@ code {
 pre {
   padding: 1.5em;
   border-radius: 8px;
+  overflow: visible !important;
 }
 pre > code {
   all: unset;
@@ -137,7 +138,7 @@ blockquote {
 }
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  border-top: 1px solid var(--accent);
 }
 @media (max-width: 720px) {
   body {

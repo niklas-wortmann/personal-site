@@ -2,7 +2,9 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { Plausible } from 'astro-analytics';
+import '@shikijs/twoslash/style-rich.css'
+
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -63,4 +65,5 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta name="twitter:site" content="@niklas_wortmann" />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
+<ViewTransitions />
 

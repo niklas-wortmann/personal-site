@@ -20,18 +20,20 @@
     "@astrojs/vue": "4.0.8",
     "@iconify-json/mdi": "1.1.63",
     "@iconify/json": "2.2.163",
-    "astro": "4.4.1",
+    "astro": "4.5.10",
     "astro-analytics": "2.7.0",
+    "astro-expressive-code": "0.33.5",
     "astro-icon": "1.0.1",
     "astro-navbar": "2.3.1",
-    "jetbrains-ide-themes": "0.0.4",
+    "jetbrains-ide-themes": "0.0.5",
     "postcss-nesting": "12.0.2",
     "prettier": "latest",
     "prettier-plugin-astro": "latest",
     "shiki-themes": "0.2.7",
     "tailwindcss": "3.4.0",
     "typescript": "5.3.3",
-    "vue": "3.4.3"
+    "vue": "3.4.3",
+    "@shikijs/twoslash": "1.2.1"
   },
   "devDependencies": {
     "nx": "17.2.8",

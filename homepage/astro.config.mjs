@@ -1,34 +1,34 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
-import vue from "@astrojs/vue";
-import icon from "astro-icon";
-import vercel from "@astrojs/vercel/static";
-import rehypePrettyCode from "rehype-pretty-code";
-import tailwindcssNesting from 'tailwindcss/nesting'
-import { darkTheme } from 'jetbrains-ide-themes';
-import partytown from '@astrojs/partytown'
+import tailwind from '@astrojs/tailwind';
+import vue from '@astrojs/vue';
+import icon from 'astro-icon';
+import vercel from '@astrojs/vercel/static';
+import tailwindcssNesting from 'tailwindcss/nesting';
+import { DarkRaw, darkTheme } from 'jetbrains-ide-themes';
+import expressiveCode from 'astro-expressive-code';
+import {
+  transformerTwoslash
+} from '@shikijs/twoslash';
 
-const prettyCodeOptions = {
-  theme: darkTheme,
-};
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wordman.dev',
-  integrations: [mdx(), sitemap(), tailwind(), vue(), icon({
+  integrations: [expressiveCode({
+    theme: DarkRaw, shiki: {
+      transformers: [
+        transformerTwoslash()]
+    }
+  }), mdx(), sitemap(), tailwind(), vue(), icon({
     include: {
-      mdi: ["twitter", "linkedin", "github"]
+      mdi: ['twitter', 'linkedin', 'github']
     }
   })],
-  output: "static",
+  output: 'static',
   adapter: vercel(),
-  markdown: {
-    extendDefaultPlugins: true,
-    syntaxHighlight: false,
-    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
-  },
+
   vite: {
     css: {
       postcss: {

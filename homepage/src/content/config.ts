@@ -10,7 +10,8 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
-	}),
+    public: z.boolean().default(true)
+  }),
 });
 
 const talk = defineCollection({
@@ -27,6 +28,7 @@ const talk = defineCollection({
     url: z.string().url(),
     heroImageAlt: z.string(),
     codeUrl: z.string().url().optional(),
+    public: z.boolean().default(true)
   })
 })
 
