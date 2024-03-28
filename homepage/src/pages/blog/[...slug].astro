@@ -4,11 +4,11 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
 type Props = CollectionEntry<'blog'>;
 
@@ -17,30 +17,33 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-	<Content />
+  <Content />
   <hr>
   <section>
     <p>
       <h2>Thank You</h2>
-      Thanks for making it all the way down here. I appreciate you taking the time! If you have any question, please don't hesitate to reach out to me!
+      Thanks for making it all the way down here. I appreciate you taking the time! If you have any question, please don't
+      hesitate to reach out to me!
     </p>
     <h2>Share on Social Media</h2>
-    <div class='flex flex-row '>
-      <a target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`} target="_blank" class='flex flex-row items-center pr-4'>
-        <Icon name="mdi:twitter"/> <span class='pl-2'>Twitter</span>
-      </a>
-      <a target='_blank' rel='noreferrer' href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`} target="_blank" class='flex flex-row items-center'>
-        <Icon name="mdi:linkedin" /><span class='pl-2'>LinkedIn</span>
-      </a>
+    <div class='flex flex-col'>
+      <span class='mb-2'>If you like what you just read, I'd appreciate you sharing it with your network!</span>
+      <div class='flex flex-row'>
+        <a target='_blank' rel='noreferrer'
+           href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`}
+           class='flex flex-row items-center pr-4'>
+          <Icon name="mdi:twitter" />
+          <span class='pl-2'>Twitter</span>
+        </a>
+        <a target='_blank' rel='noreferrer' href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`}
+           class='flex flex-row items-center'>
+          <Icon name="mdi:linkedin" />
+          <span class='pl-2'>LinkedIn</span>
+        </a>
+      </div>
     </div>
   </section>
 </BlogPost>
 
 <style>
-  a {
-    color: var(--white);
-  }
-  a:hover {
-    color: var(--accent);
-  }
 </style>

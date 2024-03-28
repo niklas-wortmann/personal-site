@@ -59,7 +59,7 @@ body {
   /*background-size: cover;*/
   /*background-repeat: no-repeat;*/
   background: rgb(255,166,123);
-  background: radial-gradient(circle, #ffa67b 0%, #d07654 12%, #8f533e 90%, #2e1d1e 99%);
+  background: radial-gradient(circle, #ffa67b 0%, #d07654 12%, #d07654 95%, #8f533e 99%);
 }
 
 main {
@@ -197,4 +197,12 @@ hr {
 
 code, kbd, samp, pre {
   font-family: JetBrains Mono, sans-serif;
+}
+
+a {
+  background: inherit;
+  font-style: italic;
+}
+a:hover {
+  color: var(--white);
 }
