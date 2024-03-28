@@ -26,13 +26,21 @@ const { Content } = await post.render();
     </p>
     <h2>Share on Social Media</h2>
     <div class='flex flex-row '>
-      <a href="https://twitter.com/niklas_wortmann" target="_blank" class='flex flex-row items-center pr-2'>
-        <Icon name="mdi:twitter"/> <span class='pl-1'>Twitter</span>
+      <a target='_blank' rel='noreferrer' href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`} target="_blank" class='flex flex-row items-center pr-4'>
+        <Icon name="mdi:twitter"/> <span class='pl-2'>Twitter</span>
       </a>
-      <a href="https://www.linkedin.com/in/jan-niklas-wortmann/" target="_blank" class='flex flex-row items-center'>
-        <Icon name="mdi:linkedin" /><span class='pl-1'>LinkedIn</span>
+      <a target='_blank' rel='noreferrer' href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`} target="_blank" class='flex flex-row items-center'>
+        <Icon name="mdi:linkedin" /><span class='pl-2'>LinkedIn</span>
       </a>
     </div>
-
   </section>
 </BlogPost>
+
+<style>
+  a {
+    color: var(--white);
+  }
+  a:hover {
+    color: var(--accent);
+  }
+</style>
