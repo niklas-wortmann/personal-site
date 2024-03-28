@@ -186,5 +186,20 @@ As long as the `noFallthroughCasesInSwitch` compiler option is used, this code w
 
 The TypeScript [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) provides warning for certain scenarios where file-by-file transpilation can cause runtime errors.
 This mostly addresses issues when using a `const enum`.
-[Nicholas Jamieson](https://ncjamieson.com/) wrote an eslint plugin called [eslint-plugin-etc](https://www.npmjs.com/package/eslint-plugin-etc) which has a `no-enum` and `no-const-enum` rule, which is perfect to prevent errors like the ones above! 
+Luckily typescript-eslint can ban entire language features, like `enums`.
+You can find a detailed description [here](https://typescript-eslint.io/troubleshooting/#how-can-i-ban-specific-language-feature), or if you are just looking for something quick and easy here's the relevant code snippet
+
+```json
+{
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "TSEnumDeclaration",
+        "message": "Enums were a mistake in the first place! Thanks for coming to my TED talk."
+      }
+    ]
+  }
+}
+```
 
