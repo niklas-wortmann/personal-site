@@ -1,16 +1,110 @@
 ---
-title: 'First post'
+title: Why you shouldn't use Enums!
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
 heroImage: '/blog-placeholder-3.jpg'
+public: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# Why you shouldn't use Enums!
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+TypeScript `Enums` is a feature that gets way more love from the community than it actually deserves. While TypeScript 5 improved some of my original concerns,
+`Enums` are still having one major issue... There is no JavaScript concept of an `Enum`. This doesn't sound like a big deal, right? Wrong! Let's take a closer look
+at the issues and how to fix enums!
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## The Problem
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Alright `Enums`don't exist in JavaScript, what's the big deal, right?! We all heard that statement 'TypeScript is a superset of JavaScript', so why shouldn't
+that superset add features to JavaScript. Well ... let me tell you the story of `experimentalDecorators`. In times not too long ago, there was just a TypeScript
+poor little compiler flag called `experimentalDecorators`. This flag was trying to act and behave like his big brother the TC39 `Decorator` Proposal.
+But unfortunately the `Decorator` proposal wasn’t all grown up yet, so as it happens to brothers, they grow apart. End of the story. TypeScript introduced Decorators,
+modeled after the TC39 proposal as it was at that time, but it happened that the proposal changed while the experimentalDecorator feature is used and therefore can't easily
+be changed.
+To cope with the fact that there is not an enum construct in JavaScript, TypeScript came up with a clever trick.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+![Picture showing the code of a TS Enum defining some HTTP Status Code and also the resulting JS code](./ts-enums.png)
+
+A little simplified but basically TypeScript creates an Object that looks like this
+
+```ts
+export const HttpStatusCode = {
+    OK: 200,
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+    INTERNAL_SERVER_ERROR: 500,
+    200: "OK",
+    400: "BAD_REQUEST",
+    403: "FORBIDDEN",
+    404: "NOT_FOUND",
+    500: "INTERNAL_SERVER_ERROR"
+};
+```
+
+The nice thing with this approach is that is let's us have access to every possible information of the `HttpStatusCode` in a biderectional way. We can get results by
+calling `HttpStatusCode["OK"]` & `HttpStatusCode[200]`. From a developer experience this is nice and opens the door for a lot of different ways to get access to these informations,
+but it does come an increase in bundle size. That bundle size might be negligble, but it can easily add up, just imagine if I would have added all possible values
+to my `HttpStatusCode` Enum, I just picked some common one, but just have a quick look at the [https://en.wikipedia.org/wiki/List_of_HTTP_status_codes](full%20list), and it should give you a rough impression what it does
+to your bundle size.
+There are applications out there, where bundle size is not a concern at all, but I still have a problem with this approach. It breaks the distinct line between TypeScript and JavaScript.
+There is one fix to that problem, `const enums` in TypeScript don't create any code at runtime, they just act as a type and their value is automatically resolved when used.
+
+![Picture showing the code of a TS Enum defining some HTTP Status Code and also the resulting JS code](./ts-const-enum.png)
+
+[//]: # (https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBAYwgOwM72MgrgWzgCRhjAGUYBDGLVAYQgBNg4BvAKDg7gHkBpOAXjgAmAAwiANO04AhAIIARAPoAlAKIBFAKqqSAFQFwALGMmc4mgHKzNu-F2UBJAFqr5B4wEZTnAGL3pDvLyqhbuIgDM3hwWXLqKfpZugsaGUXAOFrqqylYAMook2QBq2YrZyvYGAKxirAC+rEho8CAGhMRklNR0jAB0vEA)
+
+The result of this looks great to me, but you can run into problems with this.
+It is getting more and more common to use other transpilers to generate JavaScript code from TypeScript.
+Often those transpilers work on a file-by-file basis,
+transpiling just a single file without fully understanding the full type system.
+[Vite](https://vitejs.dev/) and [Babel](https://babeljs.io/) work this way for instance.
+Just transpiling a single file does not read imported modules, so there is no way to support `const enums`.
+
+## The Solution
+
+Well first and foremost don't use enums!
+TypeScript has Literal Types that are a great replacement for enums.
+Literal Types in TypeScript can be used for strings and numbers (and booleans but less relevant for this blog post) and the best thing is: those are type safe.
+Alright, here's how using literal types for our `HttpStatusCode` enum could look like this:
+
+```ts twoslash
+export const HttpStatusCode_OK = 200;
+export const HttpStatusCode_BAD_REQUEST = 400;
+export const HttpStatusCode_UNAUTHORIZED = 401;
+export const HttpStatusCode_FORBIDDEN = 403;
+export const HttpStatusCode_NOT_FOUND = 404;
+export const HttpStatusCode_INTERNAL_SERVER_ERROR = 500;
+
+export const ALL_HTTP_STATUS_CODES = [
+  HttpStatusCode_OK,
+  HttpStatusCode_BAD_REQUEST,
+  HttpStatusCode_UNAUTHORIZED,
+  HttpStatusCode_FORBIDDEN,
+  HttpStatusCode_NOT_FOUND,
+  HttpStatusCode_INTERNAL_SERVER_ERROR,
+] as const;
+
+export type HttpStatusCodes = typeof ALL_HTTP_STATUS_CODES[number]
+```
+
+This is a pattern I mostly use for this purpose.
+It doesn’t support the bidirectional-access of enums, but this is something I rarely use and could be accomplished via copy paste.
+It also works the same way with strings instead of numbers.
+This approach doesn't come with footguns and is pretty straightforward.
+I also like the type safety of it.
+
+```ts
+const someFn = (someValue: HttpStatusCodes) => {...}
+
+someFn(200); // This Works ✅
+someFn(HttpStatusCode_OK); // This Works too ✅
+someFn(300); // Does not work ❌
+```
+
+## Helpful Utilities
+
+The TypeScript [`isolatedModules`](https://www.typescriptlang.org/tsconfig#isolatedModules) provides warning for certain scenarios where file-by-file transpilation can cause runtime errors.
+This mostly addresses issues when using a `const enum`.
+[Nicholas Jamieson](https://ncjamieson.com/) wrote an eslint plugin called [eslint-plugin-etc](https://www.npmjs.com/package/eslint-plugin-etc) which has a `no-enum` and `no-const-enum` rule, which is perfect to prevent errors like the ones above! 
+
