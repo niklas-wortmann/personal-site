@@ -21,7 +21,7 @@ import headshot from '../images/headshot.png';
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main class="container mx-auto items-center content grid grid-cols-2" style='height: calc(2 * 100vh)'>
+    <main class="container mx-auto items-center content grid md:grid-cols-2 sm:grid-cols-1 sm:items-center sm:justify-center" style='height: calc(1.6 * 100vh)'>
       <section class="text-container">
         <span class="highlight-text">Hi! I am</span>
         <h1>Jan-Niklas Wortmann</h1>
@@ -33,10 +33,13 @@ import headshot from '../images/headshot.png';
       </section>
       <Image
         src={avatarImage}
+        class='logo sm:m-auto sm:-order-1  md:order-none'
         alt="Logo of the Website, which is showing a software developer with a nice cup of coffee"
       />
       <Image
         src={headshot}
+        inferSize
+        class='headshot sm:w-2/3 sm:m-auto'
         alt="Headshot in black and white of Jan-Niklas Wortmann"
       />
       <section class="text-container">

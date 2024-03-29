@@ -198,7 +198,9 @@ hr {
 code, kbd, samp, pre {
   font-family: JetBrains Mono, sans-serif;
 }
-
+code {
+  overflow-x: auto !important;
+}
 a {
   background: inherit;
   font-style: italic;
