@@ -7,6 +7,15 @@ heroImageAlt: A hand holding the Typescript logo with 'Enums' Label being thrown
 public: true
 slug: typescript-enums
 socialMediaImage: ./heroImageTwitter.png
+keywords:
+  - TypeScript
+  - TS
+  - enums
+  - const enums
+  - eslint
+  - bundle size
+  - JavaScript
+  - JS 
 
 ---
 

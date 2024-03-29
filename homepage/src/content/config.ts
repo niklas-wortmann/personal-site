@@ -12,7 +12,8 @@ const blog = defineCollection({
     heroImage: image(),
     socialMediaImage: image().optional(),
     heroImageAlt: z.string(),
-    public: z.boolean().default(true)
+    public: z.boolean().default(true),
+    keywords: z.array(z.string())
   }),
 });
 
@@ -30,7 +31,8 @@ const talk = defineCollection({
     url: z.string().url(),
     heroImageAlt: z.string(),
     codeUrl: z.string().url().optional(),
-    public: z.boolean().default(true)
+    public: z.boolean().default(true),
+    keywords: z.array(z.string())
   })
 })
 

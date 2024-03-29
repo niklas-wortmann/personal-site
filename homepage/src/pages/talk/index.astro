@@ -15,7 +15,9 @@ const talks = (await getCollection('talk')).filter(x => x.data.public).sort(
 <!doctype html>
 <html lang="en">
 <head>
-  <BaseHead title="Talks by Jan-Niklas Wortmann" description="An Overview of All the Talks that Jan-Niklas gave Publicly" />
+  <BaseHead title="Talks by Jan-Niklas Wortmann" description="An Overview of All the Talks that Jan-Niklas gave Publicly"
+            keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "talks", "public", "speaking", "conferences", "meetups", "public speaking"]}
+  />
   <style>
     main {
       width: 960px;

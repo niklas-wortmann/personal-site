@@ -12,4 +12,14 @@ url: https://ngconf2024.wordman.dev
 heroImage: ./signals-vs-observables.png
 heroImageAlt: Title Image for Talking
 codeUrl: https://github.com/niklas-wortmann/signals-observable-example
+keywords: 
+  - Angular
+  - Signals
+  - RxJS
+  - Observables
+  - reactive
+  - primitives
+  - fine grained
+  - corse grained
+  - reactivity
 ---

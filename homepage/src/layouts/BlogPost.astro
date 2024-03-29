@@ -6,14 +6,16 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {id: string};
 
-const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, socialMediaImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, socialMediaImage, keywords, id } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} image={socialMediaImage?.src ?? heroImage.src}/>
+		<BaseHead title={title} description={description} image={socialMediaImage?.src ?? heroImage.src}
+              keywords={keywords}
+    />
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -60,7 +62,7 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, socia
 		<main>
 			<article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt={heroImageAlt} loading='eager'/>}
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt={heroImageAlt} loading='eager' transition:name={`heroImage-${id}`}/>}
 				</div>
 				<div class="prose">
 					<div class="title">
