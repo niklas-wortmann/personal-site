@@ -31,7 +31,7 @@ const talk = defineCollection({
     url: z.string().url(),
     heroImageAlt: z.string(),
     codeUrl: z.string().url().optional(),
-    public: z.boolean().default(true),
+    public: z.boolean().default(false),
     keywords: z.array(z.string())
   })
 })

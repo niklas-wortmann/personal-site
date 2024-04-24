@@ -11,6 +11,7 @@ pubDate: 2024-03-20
 url: https://ngconf2024.wordman.dev
 heroImage: ./signals-vs-observables.png
 heroImageAlt: Title Image for Talking
+public: true
 codeUrl: https://github.com/niklas-wortmann/signals-observable-example
 keywords: 
   - Angular

@@ -10,6 +10,7 @@ pubDate: 2024-04-24
 url: https://kcjs.wordman.dev
 heroImage: ./hero.png
 heroImageAlt: Title Image for KC JS Talk
+public: false
 keywords: 
   - TypeScript
   - ts-ignore
