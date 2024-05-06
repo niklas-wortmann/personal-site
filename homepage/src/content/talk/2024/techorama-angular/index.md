@@ -1,7 +1,7 @@
 ---
 title: Reactivity in Angular Applications
 subtitle: Signals vs Observables
-conf: ng-conf
+conf: Techorama
 confLink: https://techorama.be/
 location: Antwerp, Belgium
 description: |
