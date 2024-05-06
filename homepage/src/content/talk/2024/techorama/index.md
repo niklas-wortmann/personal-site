@@ -9,7 +9,7 @@ description: |
 pubDate: 2024-05-08
 url: https://techorama.wordman.dev
 heroImage: ./hero.png
-heroImageAlt: 
+heroImageAlt: Title Image for Talk
 keywords: 
   - TypeScript
   - ts-ignore

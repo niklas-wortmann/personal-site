@@ -10,7 +10,7 @@ description: |
 pubDate: 2024-05-07
 url: https://techorama-angular.wordman.dev
 heroImage: ./signals-vs-observables.png
-heroImageAlt: 
+heroImageAlt: Title Image for Talk
 public: true
 codeUrl: https://github.com/niklas-wortmann/signals-observable-example
 keywords: 
