@@ -7,7 +7,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
 
 const talks = (await getCollection('talk')).filter(x => x.data.public).sort(
-  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate),
+  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 
 ---
