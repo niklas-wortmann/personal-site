@@ -36,7 +36,7 @@ This alpha release aims to give you a taste of the developer experience with `xs
 
 ## Getting Started
 
-To help you get started, we've provided several examples on [GitHub](https://github.com/niklas-wortmann/xstate-ngx). Here's a quick highlight of how you can use `xstate-ngx` in your projects:
+To help you get started, we've provided several examples on [GitHub](https://github.com/niklas-wortmann/xstate-angular). Here's a quick highlight of how you can use `xstate-ngx` in your projects:
 
 ### Example: Simple Toggle Machine
 
@@ -88,6 +88,6 @@ I couldn't have reached this milestone without the invaluable contributions and 
 
 ## Join the Conversation
 
-Your feedback is essential to us. Join the conversation, try out the alpha release, and let us know your thoughts. For now the best place to share any kind of feedback is the [xstate-ngx repository](https://github.com/niklas-wortmann/xstate-ngx). Together, we can make `xstate-ngx` a robust and delightful tool for the Angular community.
+Your feedback is essential to us. Join the conversation, try out the alpha release, and let us know your thoughts. For now the best place to share any kind of feedback is the [xstate-ngx repository](htthttps://github.com/niklas-wortmann/xstate-angular). Together, we can make `xstate-ngx` a robust and delightful tool for the Angular community.
 
 Let me know what you think and happy coding!
