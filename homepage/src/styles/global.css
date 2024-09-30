@@ -26,3 +26,17 @@ a {
 .card {
   @apply p-6 rounded-lg shadow-lg bg-coffee-darker border border-coffee-medium
 }
+
+ol {
+  list-style: decimal;
+  @apply ml-8 mt-2 mb-2
+}
+
+ul {
+  list-style: disc;
+  @apply ml-8 mt-2 mb-2
+}
+
+li {
+  @apply pl-2
+}
