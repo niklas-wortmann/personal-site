@@ -1,10 +1,5 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
 import Layout from '../../components/Layout.astro';
 
 const posts = (await getCollection('blog')).filter(x => x.data.public).sort(
