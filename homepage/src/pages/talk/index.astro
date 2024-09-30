@@ -1,122 +1,29 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
+import Layout from '../../components/Layout.astro';
 
 const talks = (await getCollection('talk')).filter(x => x.data.public).sort(
   (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 
+const isDarkMode = true;
+
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <BaseHead title="Talks by Jan-Niklas Wortmann" description="An Overview of All the Talks that Jan-Niklas gave Publicly"
-            keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "talks", "public", "speaking", "conferences", "meetups", "public speaking"]}
-  />
-  <style>
-    main {
-      width: 960px;
-      min-height: calc(100vh - 136px - 56px)
-    }
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    ul li {
-      width: calc(50% - 1rem);
-      border-radius: 12px;
-      padding-bottom: 5px;
-    }
-    ul li * {
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-    ul li:first-child {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-    ul li:first-child img {
-      width: 100%;
-    }
-    ul li:first-child .title {
-      font-size: 2.369rem;
-    }
-    ul li img {
-      margin-bottom: 0.5rem;
-      border-radius: 12px;
-    }
-    ul li a {
-      display: block;
-      color: white,
-    }
-    .title {
-      margin: 0;
-      line-height: 1;
-    }
-    .date {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .conf:hover {
-        color: var(--muted-accent);
-      }
-    }
-    .title, .date {
-      padding-left: 0.5rem
-    }
-    ul li:hover {
-      box-shadow: var(--box-shadow);
-    }
-    @media (max-width: 720px) {
-      ul {
-        gap: 0.5em;
-      }
-      ul li {
-        width: 100%;
-      }
-      ul li:first-child {
-        margin-bottom: 0;
-      }
-      ul li:first-child .title {
-        font-size: 1.563em;
-      }
-    }
-  </style>
-</head>
-<body>
-<Header />
-<main>
-  <section>
-    <ul>
-      {
-        talks.map((talk) => (
-          <li>
-            <a href={`/talk/${talk.slug}`}>
-              <Image width={720} height={360}
-                     src={talk.data.heroImage} alt={talk.data.heroImageAlt} />
-              <h4 class="title" style='color: var(--muted-accent);'>{talk.data.title}</h4>
-              <p class="date" style='color: var(--light-accent);'>
-                <FormattedDate date={talk.data.pubDate} />
-                <a class='conf' href={`${talk.data.confLink}`}>{talk.data.conf}, {talk.data.location}</a>
-              </p>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-</main>
-<Footer />
-</body>
-</html>
+<Layout title='Talks by Jan-Niklas Wortmann' description='An Overview of All the Talks that Jan-Niklas gave Publicly' keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "talks", "public", "speaking", "conferences", "meetups", "public speaking"]}>
+  <div class="min-h-screen">
+    <h2 class={`text-4xl font-bold mb-8 ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>Recent Talks</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {talks.map((talk) => (
+        <div
+          class='card'
+        >
+          <h3 class={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-coffee-light' : 'text-coffee-dark'}`}>{talk.data.title} @ {talk.data.conf}</h3>
+          <p class={`mb-4 ${isDarkMode ? 'text-coffee-text' : 'text-coffee-dark'}`}>{talk.data.description}</p>
+          <a href={`/talk/${talk.slug}`} class={`${isDarkMode ? 'text-coffee-accent hover:text-coffee-light' : 'text-coffee-medium hover:text-coffee-dark'} hover:underline`}>Details</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

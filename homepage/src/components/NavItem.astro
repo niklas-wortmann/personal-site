@@ -1,0 +1,25 @@
+---
+const { href } = Astro.props;
+const icon = Astro.slots;
+const isDarkMode = true;
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+
+---
+
+<a
+  class={`p-2 rounded-full ${
+    isActive
+      ? isDarkMode
+        ? 'bg-coffee-light text-coffee-dark hover:text-coffee-dark'
+        : 'bg-coffee-dark text-coffee-light'
+      : isDarkMode
+        ? 'text-coffee-light hover:text-coffee-accent'
+        : 'text-coffee-dark'
+  }`}
+  href={href}
+  aria-label={href}
+>
+  <Fragment set:html={icon.render("default")} />
+</a>
+

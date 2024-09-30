@@ -1,20 +1,19 @@
 ---
 import Social from './Social.astro';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 const today = new Date();
+const isDarkMode = true; // TODO fix me
 ---
 
-<footer>
-  &copy; {today.getFullYear()} Jan-Niklas Wortmann. All rights reserved.
-  <Social />
+<footer class="fixed bottom-0 right-0 p-4 flex space-x-4">
+  <!--&copy; {today.getFullYear()} Jan-Niklas Wortmann. All rights reserved.-->
+  <a href="https://twitter.com/niklas_wortmann" target='_blank' aria-label="Twitter" class={`${isDarkMode ? 'text-coffee-light hover:text-coffee-accent' : 'text-coffee-dark hover:text-coffee-medium'} transition-colors`}>
+    <Twitter />
+  </a>
+  <a href="https://github.com/niklas_wortmann" target='_blank' aria-label="GitHub" class={`${isDarkMode ? 'text-coffee-light hover:text-coffee-accent' : 'text-coffee-dark hover:text-coffee-medium'} transition-colors`}>
+    <Github />
+  </a>
+  <a href="https://www.linkedin.com/in/jan-niklas-wortmann/" target='_blank' aria-label="LinkedIn" class={`${isDarkMode ? 'text-coffee-light hover:text-coffee-accent' : 'text-coffee-dark hover:text-coffee-medium'} transition-colors`}>
+    <Linkedin />
+  </a>
 </footer>
-
-<style>
-  footer {
-    padding: 2em 1em 1em 1em;
-    background: var(--black) no-repeat;
-    color: var(--white);
-    text-align: center;
-    position: absolute;
-    width: 100vw;
-  }
-</style>

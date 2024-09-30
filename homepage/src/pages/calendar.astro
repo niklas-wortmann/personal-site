@@ -1,0 +1,17 @@
+---
+import Cal from "@calcom/embed-react";
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title='Open Calendar' description='Put some time on my calendar and have a chat!' keyword={['book', 'time', 'calendar', 'open', 'meeting']}>
+  <h1>Open Calendar</h1>
+  <p>I want to hear from you! Whether you have questions about JetBrains tools, need advice on your next big project, or just want to geek out about the latest in web development, I’m here and ready to chat. This is also a great opportunity for me to gain new perspectives and understand how different developers are using these tools in their day-to-day work.</p>
+  <h2>What can we talk about?</h2>
+  <ul class='mb-4'>
+    <li><b>JetBrains tools:</b> Do you have feedback or questions about WebStorm, IntelliJ IDEA, PyCharm, or any other JetBrains product? I’d love to hear your thoughts!</li>
+    <li><b>JavaScript and TypeScript:</b> We can dive deep into your code, discuss best practices, and explore new features.</li>
+    <li><b>Web development:</b> From development with frameworks like Angular to structuring code in mono repositories, I’m here to discuss anything that enhances your development workflow.</li>
+    <li><b>Open topics:</b> Do you have something else on your mind? Let’s chat about it! I’m always open to talking about exciting new topics.</li>
+  </ul>
+  <Cal client:load calLink="jan-niklas-wortmann-cuerj8/15min" config={{ theme: "dark" }}></Cal>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from './BaseHead.astro';
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+
+const {title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage = 'social/index-about.png', keywords = []} = Astro.props;
+const slots = Astro.slots;
+const isDarkMode = true; // TODO Fix ME
+---
+
+<html lang="en">
+<head>
+  <BaseHead
+    title={title}
+    description={description}
+    image={socialImage}
+    keywords={keywords}
+  />
+</head>
+<body>
+  <div class={`min-h-screen ${isDarkMode ? 'bg-coffee-dark text-coffee-light' : 'bg-coffee-light text-coffee-dark'} transition-colors duration-300`}>
+    <Nav></Nav>
+    <main class="flex-grow pl-16">
+      <!--add view transitions here -->
+      <div class='container mx-auto px-4 py-16'>
+        <Fragment set:html={slots.render("default")} />
+      </div>
+    </main>
+    <Footer></Footer>
+  </div>
+</body>

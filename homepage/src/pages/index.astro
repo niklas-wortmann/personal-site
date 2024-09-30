@@ -6,68 +6,96 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
 import avatarImage from '../images/avatar.svg';
 import headshot from '../images/headshot.png';
+import Layout from '../components/Layout.astro';
+import { motion } from 'framer-motion';
 
+const isDarkMode = true // TODO Fix me
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead
-      title={SITE_TITLE}
-      description={SITE_DESCRIPTION}
-      image="social/index-about.png"
-      keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "Developer", "Developer Advocate", "Consulting", "Dev Rel", "JetBrains", "RxJS", "RxJS Core", "Angular", "GDE", "Angular GDE", "TypeScript", "Coffee"]}
-    />
-  </head>
-  <body>
-    <Header title={SITE_TITLE} />
-    <main class="container mx-auto items-center content grid md:grid-cols-2 sm:grid-cols-1 sm:items-center sm:justify-center" style='height: calc(1.6 * 100vh)'>
-      <section class="text-container">
-        <span class="highlight-text">Hi! I am</span>
-        <h1>Jan-Niklas Wortmann</h1>
-        <span
-          >I used to do IT Consulting for several Fortune 500 Companies.
-          Currently I am working as Developer Advocate for JavaScript &
-          TypeScript, aiming to help the community whenever possible!
-        </span>
-      </section>
+<Layout keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "Developer", "Developer Advocate", "Consulting", "Dev Rel", "JetBrains", "RxJS", "RxJS Core", "Angular", "GDE", "Angular GDE", "TypeScript", "Coffee"]}>
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <!--add view transition -->
+    <h1 class={`text-6xl font-bold mb-4 text-center ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>
+      <!--initial={{ scale: 0.5, opacity: 0 }}-->
+      <!--animate={{ scale: 1, opacity: 1 }}-->
+      <!--transition={{ duration: 0.5 }}-->
+      Jan-Niklas Wortmann
+    </h1>
+    <p class="text-xl mb-8 text-center max-w-2xl">
+      Developer Advocate for JavaScript & TypeScript | RxJS Core Team | Angular GDE | Coffee Snob
+    </p>
+    <div
+      class="relative w-64 h-64"
+    >
       <Image
+        loading='eager'
         src={avatarImage}
-        class='logo sm:m-auto sm:-order-1  md:order-none'
-        alt="Logo of the Website, which is showing a software developer with a nice cup of coffee"
-      />
-      <Image
-        src={headshot as any}
-        inferSize
-        class='headshot sm:w-2/3 sm:m-auto'
-        alt="Headshot in black and white of Jan-Niklas Wortmann"
-      />
-      <section class="text-container">
-        <span
-        >As a Developer Advocate for JetBrains, Jan-Niklas Wortmann isn't just
-          another coder—he's a code evangelist. With TypeScript as his weapon of
-          choice, he's on a mission to make your dev life easier, one line at a
-          time. Angular geek? He's got you covered. Obsessed with reactive
-          programming? So is he. Outside of fine-tuning the developer experience
-          at JetBrains, Jan is a Google Developer Expert for Angular and a part
-          of the RxJS Core Team.
-        </span>
-      </section>
-    </main>
-    <Footer />
-    <style>
-      .highlight-text {
-        color: var(--accent);
-      }
-      .text-container {
-        color: var(--white);
-      }
+        class={`rounded-full shadow-lg`}
+        alt="Headshot in black and white of Jan-Niklas Wortmann">
+      </Image>
+    </div>
+  </div>
+</Layout>
 
-      .content {
-        & * {
-          flex: 1;
-        }
-      }
-    </style>
-  </body>
-</html>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    <BaseHead-->
+<!--      title={SITE_TITLE}-->
+<!--      description={SITE_DESCRIPTION}-->
+<!--      image="social/index-about.png"-->
+<!--      keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "Developer", "Developer Advocate", "Consulting", "Dev Rel", "JetBrains", "RxJS", "RxJS Core", "Angular", "GDE", "Angular GDE", "TypeScript", "Coffee"]}-->
+<!--    />-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <Header title={SITE_TITLE} />-->
+<!--    <main class="container mx-auto items-center content grid md:grid-cols-2 sm:grid-cols-1 sm:items-center sm:justify-center" style='height: calc(1.6 * 100vh)'>-->
+<!--      <section class="text-container">-->
+<!--        <span class="highlight-text">Hi! I am</span>-->
+<!--        <h1>Jan-Niklas Wortmann</h1>-->
+<!--        <span-->
+<!--          >I used to do IT Consulting for several Fortune 500 Companies.-->
+<!--          Currently I am working as Developer Advocate for JavaScript &-->
+<!--          TypeScript, aiming to help the community whenever possible!-->
+<!--        </span>-->
+<!--      </section>-->
+<!--      <Image-->
+<!--        src={avatarImage}-->
+<!--        class='logo sm:m-auto sm:-order-1  md:order-none'-->
+<!--        alt="Logo of the Website, which is showing a software developer with a nice cup of coffee"-->
+<!--      />-->
+<!--      <Image-->
+<!--        src={headshot as any}-->
+<!--        inferSize-->
+<!--        class='headshot sm:w-2/3 sm:m-auto'-->
+<!--        alt="Headshot in black and white of Jan-Niklas Wortmann"-->
+<!--      />-->
+<!--      <section class="text-container">-->
+<!--        <span-->
+<!--        >As a Developer Advocate for JetBrains, Jan-Niklas Wortmann isn't just-->
+<!--          another coder—he's a code evangelist. With TypeScript as his weapon of-->
+<!--          choice, he's on a mission to make your dev life easier, one line at a-->
+<!--          time. Angular geek? He's got you covered. Obsessed with reactive-->
+<!--          programming? So is he. Outside of fine-tuning the developer experience-->
+<!--          at JetBrains, Jan is a Google Developer Expert for Angular and a part-->
+<!--          of the RxJS Core Team.-->
+<!--        </span>-->
+<!--      </section>-->
+<!--    </main>-->
+<!--    <Footer />-->
+<!--    <style>-->
+<!--      .highlight-text {-->
+<!--        color: var(&#45;&#45;accent);-->
+<!--      }-->
+<!--      .text-container {-->
+<!--        color: var(&#45;&#45;white);-->
+<!--      }-->
+
+<!--      .content {-->
+<!--        & * {-->
+<!--          flex: 1;-->
+<!--        }-->
+<!--      }-->
+<!--    </style>-->
+<!--  </body>-->
+<!--</html>-->

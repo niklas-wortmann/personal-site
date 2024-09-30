@@ -1,0 +1,19 @@
+---
+import NavItem from './NavItem.astro';
+import { Code, Coffee, Mic, Sun, Moon, File, Calendar } from 'lucide-react';
+const isDarkMode = true;
+
+---
+
+<nav class={`fixed left-0 top-0 h-screen w-16 flex flex-col items-center justify-center space-y-8 ${isDarkMode ? 'bg-coffee-darker' : 'bg-coffee-medium'} z-50`}>
+  <NavItem href="/"><Coffee size={24} /> </NavItem>
+  <NavItem href="/about"> <Code size={24} /> </NavItem>
+  <NavItem href="/blog"> <File size={24} /> </NavItem>
+  <NavItem href="/talk"> <Mic size={24} /> </NavItem>
+  <NavItem href="/calendar"> <Calendar size={24} /> </NavItem>
+  <!--<button-->
+  <!--  class={`p-2 rounded-full ${isDarkMode ? 'text-coffee-light hover:bg-coffee-medium' : 'text-coffee-dark hover:bg-coffee-light'}`}-->
+  <!--&gt;-->
+  <!--  {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}-->
+  <!--</button>-->
+</nav>

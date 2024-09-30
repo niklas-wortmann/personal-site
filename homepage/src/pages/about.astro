@@ -1,0 +1,28 @@
+---
+import Layout from '../components/Layout.astro';
+import { Image } from 'astro:assets';
+const isDarkMode = true;
+import headshot from '../images/headshot.png';
+
+---
+
+<Layout keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "Developer", "Developer Advocate", "Consulting", "Dev Rel", "JetBrains", "RxJS", "RxJS Core", "Angular", "GDE", "Angular GDE", "TypeScript", "Coffee"]}>
+  <div class="grid md:grid-cols-2 gap-8 items-center min-h-screen">
+    <div>
+      <h2 class={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>About Me</h2>
+      <p class="mb-4">
+        As a Developer Advocate for JetBrains, I'm on a mission to make your dev life easier, one line at a time. With TypeScript as my weapon of choice, I'm here to evangelize code and spread the joy of development.
+      </p>
+      <p class="mb-4">
+        Angular geek? I've got you covered. Obsessed with reactive programming? So am I. I'm also a Google Developer Expert for Angular and a part of the RxJS Core Team.
+      </p>
+    </div>
+    <div class="relative">
+      <Image
+        inferSize={true}
+        src={headshot}
+        alt="Illustrated avatar of Jan-Niklas Wortmann">
+      </Image>
+    </div>
+  </div>
+</Layout>
