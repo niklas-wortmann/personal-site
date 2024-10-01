@@ -4,7 +4,7 @@ import BaseHead from './BaseHead.astro';
 import Nav from './Nav.astro';
 import Footer from './Footer.astro';
 
-const {title = SITE_TITLE, description = SITE_DESCRIPTION, socialImage = 'social/index-about.png', keywords = []} = Astro.props;
+const {title = SITE_TITLE, description = SITE_DESCRIPTION, image = 'social/index-about.png', keywords = []} = Astro.props;
 const slots = Astro.slots;
 const isDarkMode = true; // TODO Fix ME
 ---
@@ -14,7 +14,7 @@ const isDarkMode = true; // TODO Fix ME
   <BaseHead
     title={title}
     description={description}
-    image={socialImage}
+    image={image}
     keywords={keywords}
   />
 </head>
