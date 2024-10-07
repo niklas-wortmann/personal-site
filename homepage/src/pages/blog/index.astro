@@ -9,9 +9,9 @@ const posts = (await getCollection('blog')).filter(x => x.data.public).sort(
 const isDarkMode= true;
 ---
 
-<Layout title='Talks by Jan-Niklas Wortmann' description='An Overview of All the Talks that Jan-Niklas gave Publicly' keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "talks", "public", "speaking", "conferences", "meetups", "public speaking"]}>
+<Layout title='Blogs by Jan-Niklas Wortmann' description='An Overview of All the Blogs that Jan-Niklas wrote' keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "writing", "content", "blog", "post", "article"]}>
   <div class="min-h-screen">
-    <h2 class={`text-4xl font-bold mb-8 ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>Recent Talks</h2>
+    <h2 class={`text-4xl font-bold mb-8 ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>Recent Blogposts</h2>
     <div class="grid md:grid-cols-2 gap-8">
       {posts.map((post) => (
         <a href={`/blog/${post.slug}`}
