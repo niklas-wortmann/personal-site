@@ -34,9 +34,9 @@ February might seem like a weird time for the classic "year in review" post, but
 
 ## The DevRel Life: Finding My Groove 🎵
 
-Last year was a game-changer for my role as Developer Advocate at JetBrains. You know that moment when things just click? That was 2023 for me. So I went all excited into 2024. The developer community isn't just a target audience - it's become this amazing ecosystem where every conversation thrive and everything adds another piece to the puzzle.
-
-I've been out there giving talks (probably saw some of you in the audience!), and let me tell you - there's nothing quite like the energy of live presentations. Sure, there were those classic ["demo gods, why have you forsaken me?" moments](https://youtu.be/p2JGWnUmdNw?si=AXTWXXrmkyNZe9wj&t=258), but each talk was a step towards better community engagement.
+I started my role as Developer Advocate mid of 2023 and I have never done anything like that before. So originally I felt intimidated by the flexibility and variety that this role has to offer. But last year was a game-changer for my role as Developer Advocate at JetBrains. You know that moment when things just click? That was beginning of 2024 for me. The developer community isn't just a target audience - it's become this amazing ecosystem where every conversation thrive and everything adds another piece to the puzzle.
+I am more than grateful for all the interesting people I met, the conversations I held and the relationships I built.
+I've been out there giving talks (probably saw some of you in the audience!), and let me tell you - there's nothing quite like the energy of live presentations. Sure, there were those classic ["demo gods, why have you forsaken me?" moments](https://youtu.be/p2JGWnUmdNw?si=AXTWXXrmkyNZe9wj&t=258), but each talk was a step towards better community engagement and personal growth.
 
 ## The Personal Changelog 💪
 
@@ -49,11 +49,12 @@ I've been out there giving talks (probably saw some of you in the audience!), an
 - Deprecated: Old basically non-existent fitness habits
 ~ Pending: Reading goals (status: in progress)
 ```
-Other than physical and emotional support my involvement in the delivery of baby Diana was rather secondary, but words can hardly describe the joy I feel! Everyone involved is healthy and doing well!
 
-Let's be real - getting fitter while keeping up with tech life and having kids and family at home isn't exactly a walk in the park (though actual walks in the park helped!). But sometimes you gotta do what you gotta do, and that might involve getting up at 5am to get in a workout. So setting a fixed schedule of particular workout days and time for each week helped me a lot to stick to my goals!
+The highlight of the year? Welcoming baby Diana! While my role in the delivery was admittedly supporting cast, the joy is indescribable. Everyone's healthy and thriving, which is all we could ask for.
 
-The reading situation?! Well, that was like that side project you keep meaning to get to. But 2025? Already knocked out 3 books in January. Sometimes you just need the right runtime environment (apparently paternity leave works for reading productivity - who knew?).
+Speaking of thriving - transforming fitness habits while juggling tech life and family isn't exactly straightforward. But necessity breeds innovation, right? Enter the 5 AM workout solution. Setting a fixed schedule turned out to be my secret weapon for consistency. Those early morning session and generally better eating habits became the foundation of my 30-pound transformation.
+
+And remember that perpetually postponed reading goal? You know, like that side project you keep meaning to start? Well, paternity leave unexpectedly became my productive reading environment - three books down in January alone. Who knew baby naps could be such excellent reading sprints (or late night reading sessions if the baby just doesn't want to go to bed at 11pm...)
 
 ## What's Next? The Roadmap 🗺️
 
