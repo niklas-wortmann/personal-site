@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Definitions -->
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2b2b2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3c3f41;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Loading Bar Gradient -->
+    <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff8c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+
+  <!-- Centered Home Office Setup -->
+  <g transform="translate(200,120)">
+    <!-- Desk - Centered and Wider -->
+    <rect x="100" y="200" width="600" height="20" fill="#4a4a4a" />
+
+    <!-- Main Monitor - Centered -->
+    <g transform="translate(200,0)">
+      <!-- Monitor Frame -->
+      <rect x="0" y="80" width="400" height="160" rx="5" fill="#1a1a1a" />
+      <rect x="10" y="90" width="380" height="140" fill="#2b2b2b" />
+
+      <!-- Code on Screen -->
+      <text x="30" y="115" font-family="JetBrains Mono, monospace" font-size="14">
+        <tspan fill="#cc7832">const</tspan>
+        <tspan fill="#a9b7c6"> parentingMode = </tspan>
+        <tspan fill="#cc7832">true</tspan>
+        <tspan fill="#a9b7c6">;</tspan>
+      </text>
+      <text x="30" y="140" font-family="JetBrains Mono, monospace" font-size="14">
+        <tspan fill="#cc7832">while</tspan>
+        <tspan fill="#a9b7c6">(parentingMode) {</tspan>
+      </text>
+      <text x="50" y="165" font-family="JetBrains Mono, monospace" font-size="14">
+        <tspan fill="#6a8759">'yeet coding'</tspan>
+      </text>
+      <text x="30" y="190" fill="#a9b7c6" font-family="JetBrains Mono, monospace" font-size="14">}</text>
+    </g>
+  </g>
+
+  <!-- Loading Bar - 100% -->
+  <g transform="translate(200,450)">
+    <rect x="0" y="0" width="800" height="30" rx="15" fill="#2b2b2b" />
+    <rect x="0" y="0" width="800" height="30" rx="15" fill="url(#loadingGradient)" />
+    <text x="400" y="20" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+      BACK TO TECH ... 100%
+    </text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="36" font-weight="bold">
+    Back in Action: A Developer's Return
+  </text>
+
+  <!-- Social Handle -->
+  <text x="1050" y="590" fill="#ff8c00" font-family="Arial, sans-serif" font-size="14">@niklas_wortmann</text>
+</svg>
