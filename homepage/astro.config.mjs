@@ -27,7 +27,8 @@ export default defineConfig({
     }
   }), mdx(), sitemap(), tailwind(), react(), icon({
     include: {
-      mdi: ['twitter', 'linkedin', 'github']
+      mdi: ['twitter', 'linkedin', 'github'],
+      ri: ['bluesky-line']
     }
   })],
   output: 'static',

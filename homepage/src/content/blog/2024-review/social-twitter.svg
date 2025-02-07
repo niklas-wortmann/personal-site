@@ -33,14 +33,14 @@
         <tspan fill="#cc7832">const</tspan>
         <tspan fill="#a9b7c6"> parentingMode = </tspan>
         <tspan fill="#cc7832">true</tspan>
-        <tspan fill="#a9b7c6">;</tspan>
       </text>
       <text x="30" y="140" font-family="JetBrains Mono, monospace" font-size="14">
         <tspan fill="#cc7832">while</tspan>
         <tspan fill="#a9b7c6">(parentingMode) {</tspan>
       </text>
       <text x="50" y="165" font-family="JetBrains Mono, monospace" font-size="14">
-        <tspan fill="#6a8759">'yeet coding'</tspan>
+        <tspan fill="#cc7832">yeet</tspan>
+        <tspan fill="#a9b7c6">coding</tspan>
       </text>
       <text x="30" y="190" fill="#a9b7c6" font-family="JetBrains Mono, monospace" font-size="14">}</text>
     </g>

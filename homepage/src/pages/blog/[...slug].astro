@@ -30,6 +30,13 @@ const { Content } = await post.render();
       <span class='mb-2'>If you like what you just read, I'd appreciate you sharing it with your network!</span>
       <div class='flex flex-row'>
         <a target='_blank' rel='noreferrer'
+           href={`
+            https://bsky.app/intent/compose?text='${post.data.description} read more here ${Astro.url} by @wordman.dev`}
+           class='flex flex-row items-center pr-4'>
+          <Icon name="ri:bluesky-line" />
+          <span class='pl-2'>Bluesky</span>
+        </a>
+        <a target='_blank' rel='noreferrer'
            href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`}
            class='flex flex-row items-center pr-4'>
           <Icon name="mdi:twitter" />

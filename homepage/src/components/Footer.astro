@@ -1,10 +1,14 @@
 ---
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, Bluesky } from 'lucide-react';
+import { Icon } from 'astro-icon/components';
 const isDarkMode = true; // TODO fix me
 ---
 
 <footer class="fixed bottom-0 right-0 p-4 flex space-x-4">
   <!--&copy; {today.getFullYear()} Jan-Niklas Wortmann. All rights reserved.-->
+  <a href="https://bsky.app/profile/wordman.dev" target='_blank' aria-label="Bluesky" class={`${isDarkMode ? 'text-coffee-light hover:text-coffee-accent' : 'text-coffee-dark hover:text-coffee-medium'} transition-colors`}>
+    <Icon name="ri:bluesky-line" size={24}/>
+  </a>
   <a href="https://twitter.com/niklas_wortmann" target='_blank' aria-label="Twitter" class={`${isDarkMode ? 'text-coffee-light hover:text-coffee-accent' : 'text-coffee-dark hover:text-coffee-medium'} transition-colors`}>
     <Twitter />
   </a>
