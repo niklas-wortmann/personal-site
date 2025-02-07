@@ -30,11 +30,12 @@ keywords:
 
 ---
 
-February might seem like a weird time for the classic "year in review" post, but hear me out, considering that around 80% of New Year's Resolution are considered failed by the beginning of February. I'm just getting back from paternity leave (actually less sleep-deeprived than I anticipated). There's something about returning to work that makes you want to take stock of where you've been and where you're heading.
+As I return from paternity leave on February 10th 2025, timing feels perfect for an unconventional year-in-review reflection. Not just because I'm transitioning back to my Developer Advocate role at JetBrains, but because this pause has given me a unique perspective on both personal and professional growth. While others might be watching their New Year's resolutions fade, I'm using this moment to assess what worked in 2024, set intentional goals for 2025, and share insights that might resonate with fellow tech professionals balancing career growth with life's major milestones.
+By making these reflections public, I'm not just documenting my journey – I'm creating accountability for the goals ahead. Let's dive into how 2024 shaped up, where some aspirations fell short, and what's on the horizon for 2025.
 
 ## The DevRel Life: Finding My Groove 🎵
 
-I started my role as Developer Advocate mid of 2023 and I have never done anything like that before. So originally I felt intimidated by the flexibility and variety that this role has to offer. But last year was a game-changer for my role as Developer Advocate at JetBrains. You know that moment when things just click? That was beginning of 2024 for me. The developer community isn't just a target audience - it's become this amazing ecosystem where every conversation thrive and everything adds another piece to the puzzle.
+I started my role as Developer Advocate mid of 2023, and I have never done anything like that before. So originally I felt intimidated by the flexibility and variety that this role has to offer. But last year was a game-changer for my role as Developer Advocate at JetBrains. You know that moment when things just click? That was beginning of 2024 for me. The developer community isn't just a target audience - it's become this amazing ecosystem where every conversation thrive and everything adds another piece to the puzzle.
 I am more than grateful for all the interesting people I met, the conversations I held and the relationships I built.
 I've been out there giving talks (probably saw some of you in the audience!), and let me tell you - there's nothing quite like the energy of live presentations. Sure, there were those classic ["demo gods, why have you forsaken me?" moments](https://youtu.be/p2JGWnUmdNw?si=AXTWXXrmkyNZe9wj&t=258), but each talk was a step towards better community engagement and personal growth.
 
@@ -60,7 +61,7 @@ And remember that perpetually postponed reading goal? You know, like that side p
 
 Public speaking is getting a major version update this year. For 2025 I want to be more intentional with my language and words of choice and generally improve my stage presence. Because let's face it - technical knowledge is only as good as the delivery.
 
-And speaking of communication... There's something brewing in the content creation space. Can't spill all the beans yet, but I am working on something I am super excited to share with y'all in a few weeks. Watch this space for a major announcement!
+And speaking of communication... This year I want to create a lot more content, primarily written content but also videos (which is partially also a driver for this blog post). I Can't spill all the beans yet, but I am working on something I am super excited to share with y'all in a few weeks. Watch this space for a major announcement!
 
 ## The Bottom Line
 
