@@ -18,7 +18,7 @@ const isDarkMode = true; // TODO Fix ME
     keywords={keywords}
   />
 </head>
-<body>
+<body class={`${isDarkMode ? 'bg-coffee-dark text-coffee-light' : 'bg-coffee-light text-coffee-dark'}`}>
   <div class={`min-h-screen ${isDarkMode ? 'bg-coffee-dark text-coffee-light' : 'bg-coffee-light text-coffee-dark'} transition-colors duration-300`}>
     <Nav></Nav>
     <main class="flex-grow pl-16">

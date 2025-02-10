@@ -22,6 +22,7 @@
     "framer-motion": "11.9.0",
     "lucide-react": "0.446.0",
     "@iconify-json/mdi": "1.1.63",
+    "@iconify-json/ri": "~1.2.5",
     "@iconify/json": "2.2.163",
     "@shikijs/twoslash": "1.2.1",
     "astro": "4.14.0",
