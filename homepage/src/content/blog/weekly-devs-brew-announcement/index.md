@@ -48,5 +48,5 @@ The Dev's Brew is your morning technical companion delivering curated insights w
 Join us for this technically-focused journey through the JavaScript landscape. The first issue launches Wednesday, February 26th. Subscribe now at [The Weekly Dev's Brew](https://weekly-brew.dev) for your weekly blend of technical depth and practical insights.
 
 <iframe src="https://embeds.beehiiv.com/7f2a69f2-55ae-49e0-87f9-797d92d34188?slim=true"
-data-test-id="beehiiv-embed" height="52" width="500" frameBorder="0" scrolling="no" class="mt-4 mb-4"
+data-test-id="beehiiv-embed" height="52" width="60%" frameBorder="0" scrolling="no" class="mt-4 mb-4"
 style={{"margin": "auto", borderRadius: "0px !important", backgroundColor: "transparent"}}></iframe>
