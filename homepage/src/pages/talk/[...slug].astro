@@ -3,6 +3,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Logo from '../../components/Logo.astro';
 import Layout from '../../components/Layout.astro';
+import { Icon } from 'astro-icon/components';
 
 
 export async function getStaticPaths() {
@@ -16,6 +17,7 @@ type Props = CollectionEntry<'talk'>;
 
 const _talk = Astro.props;
 const talk = _talk.data;
+console.log(talk);
 ---
 
 <Layout title={`${talk.title} ${talk.subtitle}`} description={talk.description} image={talk.heroImage.src}
@@ -25,10 +27,11 @@ const talk = _talk.data;
     <div class='w-full flex justify-center items-center flex-col mb-4'>
       <a href={`${talk.url}`} class='card w-full text-center mb-4'>Slides</a>
       {talk.codeUrl != null && <a href={`${talk.codeUrl}`} class='card w-full text-center'>Code Examples</a>}
+      {talk.links && talk.links.length > 0 && talk.links.map(link => <a href={`${link.url}`} class='card w-full text-center'>{ link.label }</a>)}
     </div>
     <h2>Let's Stay in Touch</h2>
     <div class='w-full flex justify-center items-center flex-col mb-4'>
-      <a href='https://twitter.com/niklas_wortmann' class='card w-full text-center mb-4'>X (formerly Twitter)</a>
+      <a href="https://bsky.app/profile/wordman.dev"  class='card w-full text-center mb-4'>BlueSky</a>
       <a href='https://www.linkedin.com/in/jan-niklas-wortmann/' class='card w-full text-center mb-4'>LinkedIn</a>
       <a href='https://github.com/niklas-wortmann' class='card w-full text-center'>GitHub</a>
     </div>

@@ -1,14 +1,14 @@
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
-	type: 'content',
-	// Type-check frontmatter using a schema
+  type: 'content',
+  // Type-check frontmatter using a schema
   schema: ({ image }) => z.object({
     title: z.string(),
-		description: z.string(),
-		// Transform string to Date object
-		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
+    description: z.string(),
+    // Transform string to Date object
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
     heroImage: image(),
     socialMediaImage: image().optional(),
     heroImageAlt: z.string(),
@@ -29,6 +29,7 @@ const talk = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     url: z.string().url(),
+    links: z.array(z.object({ url: z.string().url(), label: z.string() })).optional(),
     heroImageAlt: z.string(),
     codeUrl: z.string().url().optional(),
     public: z.boolean().default(false),
