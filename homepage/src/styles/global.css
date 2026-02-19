@@ -10,33 +10,68 @@ h3 {
   @apply text-xl pt-2 pb-2;
 }
 
+p {
+  @apply my-3 leading-relaxed;
+}
+
 .expressive-code {
   @apply mt-2 mb-4;
-  font-family: JetBrains Mono, sans-serif;
+  font-family:
+    JetBrains Mono,
+    sans-serif;
 }
 
 hr {
-  @apply mt-2
+  @apply mt-2;
 }
 
 a {
-  @apply text-coffee-accent hover:text-coffee-light hover:underline
+  @apply text-coffee-accent hover:text-coffee-light hover:underline;
 }
 
 .card {
-  @apply p-6 rounded-lg shadow-lg bg-coffee-darker border border-coffee-medium
+  @apply p-6 rounded-lg shadow-lg bg-coffee-darker border border-coffee-medium;
 }
 
 ol {
   list-style: decimal;
-  @apply ml-8 mt-2 mb-2
+  @apply ml-8 mt-2 mb-2;
 }
 
 ul {
   list-style: disc;
-  @apply ml-8 mt-2 mb-2
+  @apply ml-8 mt-2 mb-2;
 }
 
 li {
-  @apply pl-2
+  @apply pl-2;
+}
+
+table {
+  @apply w-full my-4 border-collapse;
+}
+
+th {
+  @apply px-4 py-2 text-left font-semibold border-b-2 border-coffee-medium bg-coffee-darker;
+}
+
+td {
+  @apply px-4 py-2 border-b border-coffee-medium;
+}
+
+tr:hover {
+  @apply bg-coffee-darker/50;
+}
+
+strong {
+  @apply font-bold;
+}
+
+blockquote {
+  @apply my-4 px-4 py-3 border-l-4 border-coffee-accent bg-coffee-darker rounded-r-lg;
+  font-style: normal;
+}
+
+blockquote p {
+  @apply m-0;
 }
