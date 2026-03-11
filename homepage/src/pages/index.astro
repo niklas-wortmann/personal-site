@@ -1,34 +1,53 @@
 ---
-
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Image } from 'astro:assets';
-import avatarImage from '../images/avatar.svg';
-import Layout from '../components/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { Image } from 'astro:assets'
+import avatarImage from '../images/avatar.svg'
+import Layout from '../components/Layout.astro'
 
 const isDarkMode = true // TODO Fix me
 ---
 
-<Layout keywords={['Jan', "Jan-Niklas", "Jan-Niklas Wortmann", "Wortmann", "wordman", "Developer", "Developer Advocate", "Consulting", "Dev Rel", "JetBrains", "RxJS", "RxJS Core", "Angular", "GDE", "Angular GDE", "TypeScript", "Coffee"]}>
+<Layout
+  keywords={[
+    'Jan',
+    'Jan-Niklas',
+    'Jan-Niklas Wortmann',
+    'Wortmann',
+    'wordman',
+    'Developer',
+    'Developer Advocate',
+    'Consulting',
+    'Dev Rel',
+    'JetBrains',
+    'RxJS',
+    'RxJS Core',
+    'Angular',
+    'GDE',
+    'Angular GDE',
+    'TypeScript',
+    'Coffee',
+  ]}
+>
   <div class="flex flex-col items-center justify-center min-h-screen">
     <!--add view transition -->
-    <h1 class={`text-6xl font-bold mb-4 text-center ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}>
+    <h1
+      class={`text-6xl font-bold mb-4 text-center ${isDarkMode ? 'text-coffee-accent' : 'text-coffee-dark'}`}
+    >
       <!--initial={{ scale: 0.5, opacity: 0 }}-->
       <!--animate={{ scale: 1, opacity: 1 }}-->
       <!--transition={{ duration: 0.5 }}-->
       Jan-Niklas Wortmann
     </h1>
     <p class="text-xl mb-8 text-center max-w-2xl">
-      Developer Advocate for JavaScript & TypeScript | RxJS Core Team | Angular GDE | Coffee Snob
+      Developer Advocate for AI & Coffee Snob
     </p>
-    <div
-      class="relative w-64 h-64"
-    >
+    <div class="relative w-64 h-64">
       <Image
-        loading='eager'
+        loading="eager"
         src={avatarImage}
         class={`rounded-full shadow-lg`}
-        alt="Headshot in black and white of Jan-Niklas Wortmann">
-      </Image>
+        alt="Headshot in black and white of Jan-Niklas Wortmann"
+      />
     </div>
   </div>
 </Layout>

@@ -18,39 +18,78 @@ const { Content } = await post.render();
 
 <BlogPost id={post.id} {...post.data}>
   <Content />
-  <hr>
-  <section>
+  <hr class="post-footer-divider">
+  <section class="post-footer">
+    <h2>Thank You</h2>
     <p>
-      <h2>Thank You</h2>
-      Thanks for making it all the way down here. I appreciate you taking the time! If you have any questions, please don't
-      hesitate to reach out to me!
+      Thanks for making it all the way down here. I appreciate you taking the time! If you have any questions, please
+      don't hesitate to reach out to me!
     </p>
     <h2>Share on Social Media</h2>
-    <div class='flex flex-col'>
-      <span class='mb-2'>If you like what you just read, I'd appreciate you sharing it with your network!</span>
-      <div class='flex flex-row'>
-        <a target='_blank' rel='noreferrer'
-           href={`
+    <p class="share-intro">If you like what you just read, I'd appreciate you sharing it with your network!</p>
+    <div class="share-links">
+      <a target='_blank' rel='noreferrer'
+         href={`
             https://bsky.app/intent/compose?text='${post.data.description} read more here ${Astro.url} by @wordman.dev`}
-           class='flex flex-row items-center pr-4'>
-          <Icon name="ri:bluesky-line" />
-          <span class='pl-2'>Bluesky</span>
-        </a>
-        <a target='_blank' rel='noreferrer'
-           href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`}
-           class='flex flex-row items-center pr-4'>
-          <Icon name="mdi:twitter" />
-          <span class='pl-2'>Twitter</span>
-        </a>
-        <a target='_blank' rel='noreferrer' href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`}
-           class='flex flex-row items-center'>
-          <Icon name="mdi:linkedin" />
-          <span class='pl-2'>LinkedIn</span>
-        </a>
-      </div>
+         class='share-link'>
+        <Icon name="ri:bluesky-line" />
+        <span>Bluesky</span>
+      </a>
+      <a target='_blank' rel='noreferrer'
+         href={`https://twitter.com/intent/tweet?text=${post.data.description}&via=niklas_wortmann&url=${Astro.url}`}
+         class='share-link'>
+        <Icon name="mdi:twitter" />
+        <span>Twitter</span>
+      </a>
+      <a target='_blank' rel='noreferrer' href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`}
+         class='share-link'>
+        <Icon name="mdi:linkedin" />
+        <span>LinkedIn</span>
+      </a>
     </div>
   </section>
 </BlogPost>
 
 <style>
+  .post-footer-divider {
+    margin: 2.5rem 0 1.25rem;
+    border: 0;
+    border-top: 1px solid rgba(232, 221, 208, 0.18);
+  }
+
+  .post-footer h2 {
+    margin: 1.5rem 0 0.75rem;
+    padding: 0;
+  }
+
+  .post-footer p {
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  .share-intro {
+    margin-bottom: 0.75rem;
+  }
+
+  .share-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .share-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #f0e6d6;
+    text-decoration: none;
+    padding: 0.25rem 0;
+  }
+
+  .share-link:hover {
+    color: #e8a44a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 </style>
