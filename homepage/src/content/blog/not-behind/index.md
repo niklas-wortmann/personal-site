@@ -24,7 +24,7 @@ keywords:
 
 It’s 11 p.m. and I’m scrolling, like I missed the meeting everyone else was invited to. Call it AI FOMO, call it whatever you like. I’m a developer, I work in developer tooling, and still that night I found myself wondering whether I was falling behind.
 
-Someone is running ten Claude agents in parallel and "just supervising." Another side project shipped over the weekend that I would not have scoped in a month. I learned, in an indirect hallway-LinkedIn sense, that if I’m not already on X, then it’s all over for me. Two tabs over: more layoff news. Another company blaming "AI efficiency gains" as the cause.
+Someone is running ten Claude agents in parallel and "just supervising." Another side project shipped over the weekend that I would not have scoped in a month. I learned, in an indirect hallway-LinkedIn sense, that if I’m not using Conductor managing a bazillion agents, then it’s all over for me. Two tabs over: more layoff news. Another company blaming "AI efficiency gains" as the cause.
 
 Software has been my profession for over a decade. I’m the least likely person to feel this way, on all levels. And for about ten minutes that night, I wondered if I was going to be left behind by people posting demos in 280 characters.
 
@@ -72,7 +72,7 @@ If that sounds like you, you are not behind. You are the bulk of the industry, G
 
 I do think a gap is opening. Some kinds of company will get a lot of leverage out of agentic workflows, at least for a season, and some kinds of company will not. I do not want to be flippant about that.
 
-What I would emphasize differently is what "behind" means. With every major technology transition over the past thirty years, some version of "if you are not in the top 20%, you are done" emerges. Most careers turn out fine. "Not at the frontier" is very different from "being left behind forever." The second story is more dramatic, scarier, and much better suited to the timeline.
+What I would emphasize differently is what "behind" means. With every major technology transition over the past thirty years, some version of "if you are not in the top 20%, you are done" emerges. Most careers turn out fine. "Not at the frontier" is very different from "being left behind forever.
 
 ## We Have Been Here Before
 
@@ -80,7 +80,7 @@ We should also say this plainly: change like this isn’t new for us. Every deve
 
 This is something we are actually pretty good at. Not always picking the best tool on the first shot, but letting new tools earn their place against real work, keeping what is useful, and discarding the rest. What you need here is probably a habit you already have: judge a tool not by what it does in the Twitter demo, but by how well it performs on your actual code.
 
-Often the people writing the "you are not going to make it" threads are selling something. Sometimes literally, as in a course or a newsletter. Sometimes just an identity. No one on your team is trying to sell you anything. You just have to keep doing the work for them.
+Often the people writing the "you are not going to make it" threads are selling something. Sometimes literally, as in a course or a newsletter. Sometimes just an identity. No one on your team is trying to sell you anything. You just have to keep doing the work with them.
 
 ## What It Looks Like in Real Code
 
@@ -90,13 +90,13 @@ I do find it useful for code I am not familiar with. I can jump into a module I 
 
 Where the classic fantasy stings me most is almost the opposite. The agent misses the obvious solution right in front of it. There is already a utility that does the job, three folders over, but instead of finding it, the agent invents another one. Or it turns a 20-line change into 200 lines of abstractions for edge cases that will never occur. You can accept that output. Your editor will not complain. The tests may still go green. The codebase silently degrades, and no one remembers why six months later.
 
-So the habit I have landed on is nothing fancy. Agents can help you move faster, but only if you stay in the loop. You have to read the output. You have to steer the conversation when it wanders. You still need to know the codebase well enough to say, "No, use the thing we already have," or, "That is way too much God damned code for what I asked." That is hard enough with one agent you are focused on. I do not know how this works with ten.
+So the habit I have landed on is nothing fancy. Agents can help you move faster, but only if you stay in the loop. You have to read the output. You have to steer the conversation when it wanders. You still need to know the codebase well enough to say, "No, use the thing we already have," or, "That is way too much useless code for what I asked." That is hard enough with one agent you are focused on. I do not know how this works with ten.
 
 At that stage, you are not reviewing. You are rubber-stamping.
 
 I do not want more generated lines of code. I want a better outcome, faster. Those are different goals, and they diverge more often than the hype allows.
 
-The advice that actually works is boring:
+What works for me:
 
 - Pick one tool.
 - Use it on your real work.
@@ -108,6 +108,6 @@ Reject it when it is wrong and Learn where it is strong. That is the whole strat
 
 ## Closing
 
-The feeling is real. The narrative built on top of it, the one that says you are falling behind because you are not running a personal army of agents, is mostly timeline effect. This week, the vast majority of software engineers who are not writing articles about their tools are heads down, shipping and rolling back features and quibbling over config files.
+The feeling is real. The narrative built on top of it, the one that says you are falling behind because you are not running a personal army of agents, is mostly timeline effect. This week, the vast majority of software engineers who are not writing articles about their tools are heads down, shipping and rolling back features and messing with config files.
 
 **You are one of them. Close the tab.**
