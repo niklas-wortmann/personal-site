@@ -3,11 +3,23 @@ title: 'The Timeline Is Gaslighting You About AI'
 description: 'If AI timelines and layoff headlines are making you feel behind, this is a reminder that the loudest voices are not a reflection of the industry. Most teams are still figuring this out, and the real bottlenecks in software development have not changed.'
 pubDate: 2026-04-17
 heroImage: ./heroImage.png
-heroImageAlt: A billboard plastered with dozens of overlapping sticky notes and papers, so many that the original message is barely readable. The center reads 'Sorry, But... You're Over-Instructing Your Agent. Fix It Now.' Two warning signs on top read 'Instruction Spam' and 'Context Overflow.'
+heroImageAlt: A bell-curve meme showing a distressed figure at the top with the text "If you're not running ten agents in parallel you're cooked as a dev," two calmer figures on the sides saying "I'm not behind," and the headline "The Timeline Is Gaslighting You About AI" across the bottom.
 public: true
 slug: not-behind
 socialMediaImage: ./heroImage.png
 keywords:
+  - ai layoffs
+  - ai fomo
+  - developer anxiety
+  - developer tool fatigue
+  - ai coding agents
+  - agentic workflows
+  - software engineering productivity
+  - ai hype in software engineering
+  - coding assistants
+  - software development bottlenecks
+  - ai adoption in tech
+  - developer career anxiety
 ---
 
 It’s 11 p.m. and I’m scrolling, like I missed the meeting everyone else was invited to. Call it AI FOMO, call it whatever you like. I’m a developer, I work in developer tooling, and still that night I found myself wondering whether I was falling behind.
