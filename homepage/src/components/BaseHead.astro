@@ -1,21 +1,26 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import '../styles/global.css'
 import '@shikijs/twoslash/style-rich.css'
 
-import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
-  title: string;
-  description: string;
+  title: string
+  description: string
   keywords: string[]
-  image?: string;
+  image?: string
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = '/social/index-about.jpg', keywords } = Astro.props;
+const {
+  title,
+  description,
+  image = '/social/index-about.jpg',
+  keywords,
+} = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -40,15 +45,29 @@ const { title, description, image = '/social/index-about.jpg', keywords } = Astr
   crossorigin
 />
 
-<script src="https://cdn.usefathom.com/script.js" data-site="XNQCCFTR" defer></script>
-
+<script src="https://cdn.usefathom.com/script.js" data-site="XNQCCFTR" defer
+></script>
+<script>
+  function loadScript(a) {
+    var b = document.getElementsByTagName('head')[0],
+      c = document.createElement('script')
+    ;(c.type = 'text/javascript'),
+      (c.src = 'https://tracker.metricool.com/resources/be.js'),
+      (c.onreadystatechange = a),
+      (c.onload = a),
+      b.appendChild(c)
+  }
+  loadScript(function () {
+    beTracker.t({ hash: '559ca77f8e6d83373990018522a661d' })
+  })
+</script>
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="keywords" content={keywords.join(", ")}>
+<meta name="keywords" content={keywords.join(', ')} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -68,4 +87,3 @@ const { title, description, image = '/social/index-about.jpg', keywords } = Astr
 
 <link rel="sitemap" href="/sitemap-index.xml" />
 <ViewTransitions />
-
